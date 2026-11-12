@@ -1,0 +1,110 @@
+{
+  "sku": "BG427",
+  "handle": "bg427-cotton-canvas-jumbo-tote",
+  "title": "Cotton Canvas Jumbo Tote",
+  "brand": "Port Authority",
+  "category": "Bags",
+  "sub": "Tote Bags",
+  "kind": "bag",
+  "price": 13.62,
+  "min": 6,
+  "sizes": [
+    "One size"
+  ],
+  "upcharges": {},
+  "methods": [
+    "dtf",
+    "emb"
+  ],
+  "material": "100% Cotton",
+  "fit": "",
+  "tier": "Moderate",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Port Authority Cotton Canvas Jumbo Tote: a 100% cotton bag we decorate in our Miami shop.",
+  "details": [
+    "100% Cotton",
+    "Sizes One size",
+    "Style BG427"
+  ],
+  "views": [
+    {
+      "key": "side1",
+      "label": "Side 1",
+      "image": "flat_straight",
+      "area": {
+        "x": 23.27,
+        "y": 35.26,
+        "w": 52.29,
+        "h": 34.86,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 100.0,
+        "h": 81.44
+      }
+    },
+    {
+      "key": "side2",
+      "label": "Side 2",
+      "image": "flat_straight",
+      "area": {
+        "x": 23.27,
+        "y": 35.26,
+        "w": 52.29,
+        "h": 34.86,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 100.0,
+        "h": 81.44
+      }
+    }
+  ],
+  "cardImage": "flat_straight",
+  "cardCrop": {
+    "x": 7.0,
+    "y": 6.83,
+    "w": 85.58,
+    "h": 66.61
+  },
+  "colours": [
+    {
+      "code": "DeepBlack",
+      "name": "Deep Black",
+      "hex": "#171717",
+      "dark": true,
+      "swatch": "img/DeepBlack-swatch.gif",
+      "images": {
+        "flat_straight": "img/DeepBlack-flat_straight.jpg",
+        "flat_left": "img/DeepBlack-flat_left.jpg",
+        "flat_right": "img/DeepBlack-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Natural",
+      "name": "Natural",
+      "hex": "#e2d6c7",
+      "dark": false,
+      "swatch": "img/Natural-swatch.gif",
+      "images": {
+        "flat_straight": "img/Natural-flat_straight.jpg",
+        "flat_left": "img/Natural-flat_left.jpg",
+        "flat_right": "img/Natural-flat_right.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 2,
+  "base": "../catalog/BG427/"
+}

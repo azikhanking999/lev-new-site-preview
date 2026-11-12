@@ -1,0 +1,192 @@
+{
+  "sku": "CAR78TZH",
+  "handle": "toddler-core-fleece-full-zip-hooded-sweatshirt",
+  "title": "Toddler Core Fleece Full-Zip Hoodie",
+  "brand": "Port & Company",
+  "category": "Hoodies & Sweatshirts",
+  "sub": "Kids Sweatshirts & Hoodies",
+  "kind": "toddler-zip-hoodie",
+  "price": 25.32,
+  "min": 6,
+  "sizes": [
+    "2T",
+    "3T",
+    "4T"
+  ],
+  "upcharges": {},
+  "methods": [
+    "dtf",
+    "emb"
+  ],
+  "material": "Poly-Cotton Blend",
+  "fit": "Toddler",
+  "tier": "Budget",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Port & Company Toddler Core Fleece Full-Zip Hoodie: a poly-cotton blend sweatshirt we decorate in our Miami shop.",
+  "details": [
+    "Poly-Cotton Blend",
+    "Toddler fit",
+    "Sizes 2T to 4T",
+    "Style CAR78TZH"
+  ],
+  "views": [
+    {
+      "key": "left_chest",
+      "label": "Left chest",
+      "image": "flat_front",
+      "area": {
+        "x": 54.95,
+        "y": 33.17,
+        "w": 11.04,
+        "h": 7.36,
+        "widthIn": 3,
+        "heightIn": 3
+      },
+      "crop": {
+        "x": 1.93,
+        "y": 0.5,
+        "w": 96.13,
+        "h": 87.11
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "right_chest",
+      "label": "Right chest",
+      "image": "flat_front",
+      "area": {
+        "x": 33.92,
+        "y": 33.17,
+        "w": 11.04,
+        "h": 7.36,
+        "widthIn": 3,
+        "heightIn": 3
+      },
+      "crop": {
+        "x": 1.93,
+        "y": 0.5,
+        "w": 96.13,
+        "h": 87.11
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "back",
+      "label": "Back",
+      "image": "flat_back",
+      "area": {
+        "x": 32.62,
+        "y": 46.25,
+        "w": 33.92,
+        "h": 22.61,
+        "widthIn": 7,
+        "heightIn": 7
+      },
+      "crop": {
+        "x": 2.02,
+        "y": 20.29,
+        "w": 96.13,
+        "h": 66.08
+      }
+    }
+  ],
+  "colours": [
+    {
+      "code": "JetBlack",
+      "name": "Jet Black",
+      "hex": "#242424",
+      "dark": true,
+      "swatch": "img/JetBlack-swatch.gif",
+      "images": {
+        "model_front": "img/JetBlack-model_front.jpg",
+        "model_back": "img/JetBlack-model_back.jpg",
+        "model_side": "img/JetBlack-model_side.jpg",
+        "flat_front": "img/JetBlack-flat_front.jpg",
+        "flat_back": "img/JetBlack-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "AthlHthr",
+      "name": "Athletic Heather",
+      "hex": "#9e9fa2",
+      "dark": false,
+      "swatch": "img/AthlHthr-swatch.gif",
+      "images": {
+        "model_front": "img/AthlHthr-model_front.jpg",
+        "model_back": "img/AthlHthr-model_back.jpg",
+        "model_side": "img/AthlHthr-model_side.jpg",
+        "flat_front": "img/AthlHthr-flat_front.jpg",
+        "flat_back": "img/AthlHthr-flat_back.jpg",
+        "model_lifestyle": "img/AthlHthr-model_lifestyle.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "CandyPink",
+      "name": "Candy Pink",
+      "hex": "#e78fb7",
+      "dark": false,
+      "swatch": "img/CandyPink-swatch.gif",
+      "images": {
+        "model_front": "img/CandyPink-model_front.jpg",
+        "model_back": "img/CandyPink-model_back.jpg",
+        "model_side": "img/CandyPink-model_side.jpg",
+        "flat_front": "img/CandyPink-flat_front.jpg",
+        "flat_back": "img/CandyPink-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Navy",
+      "name": "Navy",
+      "hex": "#272e3e",
+      "dark": true,
+      "swatch": "img/Navy-swatch.gif",
+      "images": {
+        "model_front": "img/Navy-model_front.jpg",
+        "model_back": "img/Navy-model_back.jpg",
+        "model_side": "img/Navy-model_side.jpg",
+        "flat_front": "img/Navy-flat_front.jpg",
+        "flat_back": "img/Navy-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Red",
+      "name": "Red",
+      "hex": "#c23138",
+      "dark": true,
+      "swatch": "img/Red-swatch.gif",
+      "images": {
+        "model_front": "img/Red-model_front.jpg",
+        "model_back": "img/Red-model_back.jpg",
+        "model_side": "img/Red-model_side.jpg",
+        "flat_front": "img/Red-flat_front.jpg",
+        "flat_back": "img/Red-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Royal",
+      "name": "Royal",
+      "hex": "#1f54a4",
+      "dark": true,
+      "swatch": "img/Royal-swatch.gif",
+      "images": {
+        "model_front": "img/Royal-model_front.jpg",
+        "model_back": "img/Royal-model_back.jpg",
+        "model_side": "img/Royal-model_side.jpg",
+        "flat_front": "img/Royal-flat_front.jpg",
+        "flat_back": "img/Royal-flat_back.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 6,
+  "base": "../catalog/CAR78TZH/"
+}

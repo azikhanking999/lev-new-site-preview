@@ -1,0 +1,300 @@
+{
+  "sku": "437M",
+  "handle": "437m-jerzees-dri-power-sport-shirt",
+  "title": "Dri-Power Sport Shirt",
+  "brand": "Jerzees",
+  "category": "Shirts",
+  "sub": "Polo Shirts",
+  "kind": "polo",
+  "price": 19.05,
+  "min": 6,
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL"
+  ],
+  "upcharges": {
+    "2XL": 2.51,
+    "3XL": 3.28,
+    "4XL": 3.28
+  },
+  "methods": [
+    "dtf",
+    "emb"
+  ],
+  "material": "Poly-Cotton Blend",
+  "fit": "Unisex",
+  "tier": "Moderate",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Jerzees Dri-Power Sport Shirt: a poly-cotton blend shirt we decorate in our Miami shop.",
+  "details": [
+    "Poly-Cotton Blend",
+    "Unisex fit",
+    "Sizes S to 4XL",
+    "Style 437M"
+  ],
+  "views": [
+    {
+      "key": "left_chest",
+      "label": "Left chest",
+      "image": "flat_front",
+      "area": {
+        "x": 54.16,
+        "y": 21.06,
+        "w": 13.0,
+        "h": 8.67,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "crop": {
+        "x": 0.16,
+        "y": 1.79,
+        "w": 99.68,
+        "h": 74.42
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "right_chest",
+      "label": "Right chest",
+      "image": "flat_front",
+      "area": {
+        "x": 32.0,
+        "y": 21.06,
+        "w": 13.0,
+        "h": 8.67,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "crop": {
+        "x": 0.16,
+        "y": 1.79,
+        "w": 99.68,
+        "h": 74.42
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "back",
+      "label": "Back",
+      "image": "flat_back",
+      "area": {
+        "x": 32.55,
+        "y": 14.04,
+        "w": 34.48,
+        "h": 26.27,
+        "widthIn": 14,
+        "heightIn": 16
+      },
+      "crop": {
+        "x": 0.17,
+        "y": 2.15,
+        "w": 99.49,
+        "h": 73.98
+      }
+    },
+    {
+      "key": "right_sleeve",
+      "label": "Right sleeve",
+      "image": "model_side",
+      "crop": {
+        "x": 4,
+        "y": 26,
+        "w": 62,
+        "h": 41.33
+      },
+      "area": {
+        "x": 37.24,
+        "y": 39.3,
+        "w": 11,
+        "h": 7.33,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "left_sleeve",
+      "label": "Left sleeve",
+      "image": "model_side",
+      "crop": {
+        "x": 4,
+        "y": 26,
+        "w": 62,
+        "h": 41.33
+      },
+      "area": {
+        "x": 37.24,
+        "y": 39.3,
+        "w": 11,
+        "h": 7.33,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "maxTier": "s",
+      "mirror": true
+    }
+  ],
+  "colours": [
+    {
+      "code": "White",
+      "name": "White",
+      "hex": "#f3f3f3",
+      "dark": false,
+      "swatch": "img/White-swatch.gif",
+      "images": {
+        "model_front": "img/White-model_front.jpg",
+        "model_back": "img/White-model_back.jpg",
+        "model_side": "img/White-model_side.jpg",
+        "flat_front": "img/White-flat_front.jpg",
+        "flat_back": "img/White-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Black",
+      "name": "Black",
+      "hex": "#252628",
+      "dark": true,
+      "swatch": "img/Black-swatch.gif",
+      "images": {
+        "model_front": "img/Black-model_front.jpg",
+        "model_back": "img/Black-model_back.jpg",
+        "model_side": "img/Black-model_side.jpg",
+        "flat_front": "img/Black-flat_front.jpg",
+        "flat_back": "img/Black-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Ash",
+      "name": "Ash",
+      "hex": "#dfe0e5",
+      "dark": false,
+      "swatch": "img/Ash-swatch.gif",
+      "images": {
+        "model_front": "img/Ash-model_front.jpg",
+        "model_back": "img/Ash-model_back.jpg",
+        "model_side": "img/Ash-model_side.jpg",
+        "flat_front": "img/Ash-flat_front.jpg",
+        "flat_back": "img/Ash-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "CaliBlue",
+      "name": "California Blue",
+      "hex": "#0799ac",
+      "dark": false,
+      "swatch": "img/CaliBlue-swatch.gif",
+      "images": {
+        "model_front": "img/CaliBlue-model_front.jpg",
+        "model_back": "img/CaliBlue-model_back.jpg",
+        "model_side": "img/CaliBlue-model_side.jpg",
+        "flat_front": "img/CaliBlue-flat_front.jpg",
+        "flat_back": "img/CaliBlue-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Gold",
+      "name": "Gold",
+      "hex": "#fbb10e",
+      "dark": false,
+      "swatch": "img/Gold-swatch.gif",
+      "images": {
+        "model_front": "img/Gold-model_front.jpg",
+        "model_back": "img/Gold-model_back.jpg",
+        "model_side": "img/Gold-model_side.jpg",
+        "flat_front": "img/Gold-flat_front.jpg",
+        "flat_back": "img/Gold-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Kelly",
+      "name": "Kelly",
+      "hex": "#279555",
+      "dark": false,
+      "swatch": "img/Kelly-swatch.gif",
+      "images": {
+        "model_front": "img/Kelly-model_front.jpg",
+        "model_back": "img/Kelly-model_back.jpg",
+        "model_side": "img/Kelly-model_side.jpg",
+        "flat_front": "img/Kelly-flat_front.jpg",
+        "flat_back": "img/Kelly-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "LightBlue",
+      "name": "Light Blue",
+      "hex": "#8eb9e3",
+      "dark": false,
+      "swatch": "img/LightBlue-swatch.gif",
+      "images": {
+        "model_front": "img/LightBlue-model_front.jpg",
+        "model_back": "img/LightBlue-model_back.jpg",
+        "model_side": "img/LightBlue-model_side.jpg",
+        "flat_front": "img/LightBlue-flat_front.jpg",
+        "flat_back": "img/LightBlue-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Maroon",
+      "name": "Maroon",
+      "hex": "#4e262e",
+      "dark": true,
+      "swatch": "img/Maroon-swatch.gif",
+      "images": {
+        "model_front": "img/Maroon-model_front.jpg",
+        "model_back": "img/Maroon-model_back.jpg",
+        "model_side": "img/Maroon-model_side.jpg",
+        "flat_front": "img/Maroon-flat_front.jpg",
+        "flat_back": "img/Maroon-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "ROYAL",
+      "name": "Royal",
+      "hex": "#15558e",
+      "dark": true,
+      "swatch": "img/ROYAL-swatch.gif",
+      "images": {
+        "model_front": "img/ROYAL-model_front.jpg",
+        "model_back": "img/ROYAL-model_back.jpg",
+        "model_side": "img/ROYAL-model_side.jpg",
+        "flat_front": "img/ROYAL-flat_front.jpg",
+        "flat_back": "img/ROYAL-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "TrueRed",
+      "name": "True Red",
+      "hex": "#a02021",
+      "dark": true,
+      "swatch": "img/TrueRed-swatch.gif",
+      "images": {
+        "model_front": "img/TrueRed-model_front.jpg",
+        "model_back": "img/TrueRed-model_back.jpg",
+        "model_side": "img/TrueRed-model_side.jpg",
+        "flat_front": "img/TrueRed-flat_front.jpg",
+        "flat_back": "img/TrueRed-flat_back.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 18,
+  "base": "../catalog/437M/"
+}

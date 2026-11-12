@@ -1,0 +1,62 @@
+/* Lev Impressions reviews block: Google rating, photo wall, Instagram strip. */
+.rv { display: grid; gap: clamp(24px, 4vw, 44px); }
+.rv__head { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.6fr); gap: clamp(20px, 4vw, 56px); align-items: start; }
+.rv__score { display: grid; gap: 10px; justify-items: start; padding: clamp(18px, 2.4vw, 28px); border-radius: var(--r-lg); background: var(--card); border: 1.5px solid var(--ink); box-shadow: 0 5px 0 var(--ink); }
+.rv__big { display: flex; align-items: center; gap: 12px; }
+.rv__big strong { font-family: var(--font-display); font-weight: 800; font-size: clamp(56px, 7vw, 92px); line-height: 0.9; letter-spacing: -0.05em; }
+.rv__big .stars { gap: 2px; }
+.rv__count { font-size: 15px; color: var(--ink-2); }
+.rv__intro { display: grid; gap: 14px; align-content: start; }
+.rv__slot { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-radius: var(--r-md); border: 1.5px dashed var(--line-strong); font-size: 14px; color: var(--muted); }
+
+/* Photo wall: columns, each photo keeps its own shape */
+.rv__wall { columns: 4 220px; column-gap: 14px; }
+.rv__photo { position: relative; display: block; width: 100%; margin: 0 0 14px; padding: 0; break-inside: avoid; border-radius: var(--r-md); overflow: hidden; background: var(--paper-2); border: 1px solid var(--line); aspect-ratio: var(--ratio); cursor: zoom-in; transition: transform var(--d-medium) var(--ease-out), box-shadow var(--d-medium) var(--ease-out), border-color var(--d-fast), opacity var(--d-very-slow) var(--ease-out), filter var(--d-very-slow) var(--ease-out); }
+.rv__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease-out); }
+.rv__photo:hover { transform: translateY(-4px) rotate(-0.6deg); border-color: var(--ink); box-shadow: 0 6px 0 var(--ink); }
+.rv__photo:nth-child(even):hover { transform: translateY(-4px) rotate(0.6deg); }
+.rv__photo:hover img { transform: scale(1.05); }
+.rv__cap { position: absolute; left: 8px; right: 8px; bottom: 8px; display: grid; gap: 2px; padding: 8px 10px; border-radius: var(--r-sm); background: rgba(255, 255, 255, 0.94); font-size: 13px; font-weight: 600; line-height: 1.25; text-align: left; color: var(--ink); opacity: 0; transform: translateY(8px); transition: opacity var(--d-fast) var(--ease-out), transform var(--d-fast) var(--ease-out); }
+.rv__cap em { font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.rv__cap em.is-customer { color: #b93600; }
+.rv__photo:hover .rv__cap, .rv__photo:focus-visible .rv__cap, .rv__reel:hover .rv__cap { opacity: 1; transform: none; }
+
+/* Instagram strip */
+.rv__insta { display: grid; gap: 18px; padding-top: clamp(8px, 2vw, 20px); }
+.rv__instahead { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.rv__reels { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+.rv__reel { position: relative; display: block; aspect-ratio: 9 / 16; border-radius: var(--r-md); overflow: hidden; background: var(--ink); border: 1px solid var(--line); transition: transform var(--d-medium) var(--ease-out), box-shadow var(--d-medium) var(--ease-out), border-color var(--d-fast), opacity var(--d-very-slow) var(--ease-out), filter var(--d-very-slow) var(--ease-out); }
+.rv__reel img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease-out); }
+.rv__reel:hover { transform: translateY(-6px); border-color: var(--ink); box-shadow: 0 6px 0 var(--ink); }
+.rv__reel:hover img { transform: scale(1.05); }
+.rv__play { position: absolute; top: 10px; right: 10px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(255, 255, 255, 0.92); color: var(--ink); transition: transform var(--d-medium) var(--ease-bounce), background var(--d-fast); }
+.rv__reel:hover .rv__play { transform: scale(1.15); background: var(--accent); }
+
+/* Compact version for listing pages: one scrolling row */
+.rv--compact .rv__wall { columns: auto; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(200px, 22%); gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 8px; }
+.rv--compact .rv__wall::-webkit-scrollbar { display: none; }
+.rv--compact .rv__photo { margin: 0; aspect-ratio: 4 / 5; scroll-snap-align: start; }
+
+/* Lightbox */
+.rv-light { position: fixed; inset: 0; z-index: 1200; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 20px; background: rgba(14, 14, 16, 0.86); animation: lev-fade var(--d-fast) var(--ease-out) both; }
+.rv-light figure { margin: 0; display: grid; justify-items: center; gap: 12px; min-width: 0; }
+.rv-light img { max-width: 100%; max-height: calc(100dvh - 120px); border-radius: var(--r-md); animation: lev-pop var(--d-medium) var(--ease-out) both; }
+.rv-light figcaption { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; justify-content: center; color: #fff; font-size: 15px; }
+.rv-light figcaption strong { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sun); }
+.rv-light figcaption .t-num { color: rgba(255, 255, 255, 0.55); font-size: 13px; }
+.rv-light__x { position: absolute; top: 16px; right: 18px; width: 44px; height: 44px; border-radius: 50%; background: #fff; color: var(--ink); font-size: 26px; line-height: 1; }
+.rv-light__nav { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: #fff; color: var(--ink); transition: transform var(--d-quick) var(--ease-out), background var(--d-quick); }
+.rv-light__nav:hover { background: var(--accent); transform: scale(1.06); }
+.rv-light__nav--prev svg { transform: rotate(180deg); }
+
+@media (max-width: 900px) {
+  .rv__head { grid-template-columns: 1fr; }
+  .rv__wall { columns: 2 140px; column-gap: 10px; }
+  .rv__photo { margin-bottom: 10px; }
+  .rv__cap { opacity: 1; transform: none; font-size: 12px; padding: 6px 8px; }
+  .rv__reels { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 38%; overflow-x: auto; scrollbar-width: none; }
+  .rv--compact .rv__wall { grid-auto-columns: 46%; }
+  .rv-light { grid-template-columns: 1fr; padding: 12px; }
+  .rv-light__nav { position: absolute; bottom: 16px; }
+  .rv-light__nav--prev { left: 16px; } .rv-light__nav--next { right: 16px; }
+}

@@ -1,0 +1,98 @@
+{
+  "sku": "BG420",
+  "handle": "bg420-eco-blend-canvas-tote",
+  "title": "Eco Blend Canvas Tote",
+  "brand": "Port Authority",
+  "category": "Bags",
+  "sub": "Tote Bags",
+  "kind": "bag",
+  "price": 6.81,
+  "min": 6,
+  "sizes": [
+    "One size"
+  ],
+  "upcharges": {},
+  "methods": [
+    "dtf",
+    "emb"
+  ],
+  "material": "100% Cotton",
+  "fit": "",
+  "tier": "Moderate",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Port Authority Eco Blend Canvas Tote: a 100% cotton bag we decorate in our Miami shop.",
+  "details": [
+    "100% Cotton",
+    "Sizes One size",
+    "Style BG420"
+  ],
+  "views": [
+    {
+      "key": "side1",
+      "label": "Side 1",
+      "image": "flat_front",
+      "area": {
+        "x": 23.58,
+        "y": 44.88,
+        "w": 50.1,
+        "h": 33.4,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 7.26,
+        "y": 0.0,
+        "w": 82.56,
+        "h": 95.21
+      }
+    },
+    {
+      "key": "side2",
+      "label": "Side 2",
+      "image": "flat_front",
+      "area": {
+        "x": 23.58,
+        "y": 44.88,
+        "w": 50.1,
+        "h": 33.4,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 7.26,
+        "y": 0.0,
+        "w": 82.56,
+        "h": 95.21
+      }
+    }
+  ],
+  "cardImage": "flat_front",
+  "cardCrop": {
+    "x": 15.25,
+    "y": 7.17,
+    "w": 66.58,
+    "h": 78.61
+  },
+  "colours": [
+    {
+      "code": "Natural",
+      "name": "Natural",
+      "hex": "#dcd0b9",
+      "dark": false,
+      "swatch": "img/Natural-swatch.gif",
+      "images": {
+        "flat_front": "img/Natural-flat_front.jpg",
+        "flat_left": "img/Natural-flat_left.jpg",
+        "flat_right": "img/Natural-flat_right.jpg",
+        "model_lifestyle": "img/Natural-model_lifestyle.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 1,
+  "base": "../catalog/BG420/"
+}

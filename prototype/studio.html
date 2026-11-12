@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Design studio · Lev Impressions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400..700&display=swap">
+  <link rel="stylesheet" href="../theme/assets/lev-base.css">
+  <link rel="stylesheet" href="../theme/assets/lev-studio.css">
+</head>
+<body>
+  <div id="studio"></div>
+  <script src="../theme/assets/lev-pricing.js"></script>
+  <script src="../theme/assets/lev-studio.js"></script>
+  <script>
+    (async function () {
+      const q = new URLSearchParams(location.search);
+      const sku = q.get("sku") || "PC54";
+      const [product, pricing, clipart] = await Promise.all([
+        fetch("../catalog/" + sku + "/product.json").then(r => r.json()),
+        fetch("../config/pricing.json").then(r => r.json()),
+        fetch("../theme/assets/lev-clipart.json").then(r => r.json())
+      ]);
+      window.studio = LevStudio.mount(document.getElementById("studio"), {
+        product, pricing, clipart,
+        colour: q.get("color"), method: q.get("method"), panel: q.get("panel"),
+        logo: "../theme/assets/lev-logo.png",
+        homeUrl: "index.html", productUrl: "product.html?sku=" + sku
+      });
+    })();
+  </script>
+</body>
+</html>

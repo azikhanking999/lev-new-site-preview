@@ -1,0 +1,247 @@
+{
+  "sku": "OG138",
+  "handle": "og138-ogio-limit-polo",
+  "title": "Limit Polo",
+  "brand": "OGIO",
+  "category": "Shirts",
+  "sub": "Polo Shirts",
+  "kind": "polo",
+  "price": 54.51,
+  "min": 6,
+  "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL"
+  ],
+  "upcharges": {
+    "2XL": 1.1,
+    "3XL": 4.4,
+    "4XL": 4.4
+  },
+  "methods": [
+    "dtf",
+    "emb"
+  ],
+  "material": "Poly-Cotton Blend",
+  "fit": "Unisex",
+  "tier": "Premium",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "OGIO Limit Polo: a poly-cotton blend shirt we decorate in our Miami shop.",
+  "details": [
+    "Poly-Cotton Blend",
+    "Unisex fit",
+    "Sizes XS to 4XL",
+    "Style OG138"
+  ],
+  "views": [
+    {
+      "key": "left_chest",
+      "label": "Left chest",
+      "image": "model_front",
+      "area": {
+        "x": 55.5,
+        "y": 32,
+        "w": 10,
+        "h": 6.67,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "crop": {
+        "x": 12,
+        "y": 13,
+        "w": 76,
+        "h": 60
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "right_chest",
+      "label": "Right chest",
+      "image": "model_front",
+      "area": {
+        "x": 34.5,
+        "y": 32,
+        "w": 10,
+        "h": 6.67,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "crop": {
+        "x": 12,
+        "y": 13,
+        "w": 76,
+        "h": 60
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "back",
+      "label": "Back",
+      "image": "model_back",
+      "area": {
+        "x": 36,
+        "y": 27,
+        "w": 28,
+        "h": 21.33,
+        "widthIn": 14,
+        "heightIn": 16
+      },
+      "crop": {
+        "x": 12,
+        "y": 13,
+        "w": 76,
+        "h": 60
+      }
+    },
+    {
+      "key": "right_sleeve",
+      "label": "Right sleeve",
+      "image": "model_side",
+      "crop": {
+        "x": 4,
+        "y": 26,
+        "w": 62,
+        "h": 41.33
+      },
+      "area": {
+        "x": 32.32,
+        "y": 39.3,
+        "w": 11,
+        "h": 7.33,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "left_sleeve",
+      "label": "Left sleeve",
+      "image": "model_side",
+      "crop": {
+        "x": 4,
+        "y": 26,
+        "w": 62,
+        "h": 41.33
+      },
+      "area": {
+        "x": 32.32,
+        "y": 39.3,
+        "w": 11,
+        "h": 7.33,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "maxTier": "s",
+      "mirror": true
+    }
+  ],
+  "colours": [
+    {
+      "code": "Blacktop",
+      "name": "Blacktop",
+      "hex": "#272626",
+      "dark": true,
+      "swatch": "img/Blacktop-swatch.gif",
+      "images": {
+        "model_front": "img/Blacktop-model_front.jpg",
+        "model_back": "img/Blacktop-model_back.jpg",
+        "model_side": "img/Blacktop-model_side.jpg",
+        "flat_front": "img/Blacktop-flat_front.jpg",
+        "flat_back": "img/Blacktop-flat_back.jpg",
+        "model_lifestyle": "img/Blacktop-model_lifestyle.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "BrtWhite",
+      "name": "Bright White",
+      "hex": "#ebebeb",
+      "dark": false,
+      "swatch": "img/BrtWhite-swatch.gif",
+      "images": {
+        "model_front": "img/BrtWhite-model_front.jpg",
+        "model_back": "img/BrtWhite-model_back.jpg",
+        "model_side": "img/BrtWhite-model_side.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "DieselGrey",
+      "name": "Diesel Grey",
+      "hex": "#4b4d52",
+      "dark": true,
+      "swatch": "img/DieselGrey-swatch.gif",
+      "images": {
+        "model_front": "img/DieselGrey-model_front.jpg",
+        "model_back": "img/DieselGrey-model_back.jpg",
+        "model_side": "img/DieselGrey-model_side.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "ForceBlue",
+      "name": "Force Blue",
+      "hex": "#30508c",
+      "dark": true,
+      "swatch": "img/ForceBlue-swatch.gif",
+      "images": {
+        "model_front": "img/ForceBlue-model_front.jpg",
+        "model_back": "img/ForceBlue-model_back.jpg",
+        "model_side": "img/ForceBlue-model_side.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "GritGreen",
+      "name": "Grit Green",
+      "hex": "#456039",
+      "dark": true,
+      "swatch": "img/GritGreen-swatch.gif",
+      "images": {
+        "model_front": "img/GritGreen-model_front.jpg",
+        "model_back": "img/GritGreen-model_back.jpg",
+        "model_side": "img/GritGreen-model_side.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Navy",
+      "name": "Navy",
+      "hex": "#2c394c",
+      "dark": true,
+      "swatch": "img/Navy-swatch.gif",
+      "images": {
+        "model_front": "img/Navy-model_front.jpg",
+        "model_back": "img/Navy-model_back.jpg",
+        "model_side": "img/Navy-model_side.jpg",
+        "flat_front": "img/Navy-flat_front.jpg",
+        "flat_back": "img/Navy-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "SignalRed",
+      "name": "Signal Red",
+      "hex": "#aa373d",
+      "dark": true,
+      "swatch": "img/SignalRed-swatch.gif",
+      "images": {
+        "model_front": "img/SignalRed-model_front.jpg",
+        "model_back": "img/SignalRed-model_back.jpg",
+        "model_side": "img/SignalRed-model_side.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 7,
+  "base": "../catalog/OG138/"
+}

@@ -1,0 +1,214 @@
+{
+  "sku": "BG1500",
+  "handle": "bg1500-core-cotton-tote",
+  "title": "Core Cotton Tote",
+  "brand": "Port Authority",
+  "category": "Bags",
+  "sub": "Tote Bags",
+  "kind": "bag",
+  "price": 4.2,
+  "min": 6,
+  "sizes": [
+    "One size"
+  ],
+  "upcharges": {},
+  "methods": [
+    "dtf",
+    "emb"
+  ],
+  "material": "100% Cotton",
+  "fit": "",
+  "tier": "Moderate",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Port Authority Core Cotton Tote: a 100% cotton bag we decorate in our Miami shop.",
+  "details": [
+    "100% Cotton",
+    "Sizes One size",
+    "Style BG1500"
+  ],
+  "views": [
+    {
+      "key": "side1",
+      "label": "Side 1",
+      "image": "flat_front",
+      "area": {
+        "x": 22.41,
+        "y": 43.97,
+        "w": 52.19,
+        "h": 34.79,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 5.19,
+        "y": 0.0,
+        "w": 86.7,
+        "h": 95.3
+      }
+    },
+    {
+      "key": "side2",
+      "label": "Side 2",
+      "image": "flat_front",
+      "area": {
+        "x": 22.41,
+        "y": 43.97,
+        "w": 52.19,
+        "h": 34.79,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 5.19,
+        "y": 0.0,
+        "w": 86.7,
+        "h": 95.3
+      }
+    }
+  ],
+  "cardImage": "flat_front",
+  "cardCrop": {
+    "x": 13.58,
+    "y": 7.5,
+    "w": 69.92,
+    "h": 78.39
+  },
+  "colours": [
+    {
+      "code": "DeepBlack",
+      "name": "Deep Black",
+      "hex": "#1a1917",
+      "dark": true,
+      "swatch": "img/DeepBlack-swatch.gif",
+      "images": {
+        "flat_front": "img/DeepBlack-flat_front.jpg",
+        "flat_left": "img/DeepBlack-flat_left.jpg",
+        "flat_right": "img/DeepBlack-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "DeepRed",
+      "name": "Deep Red",
+      "hex": "#9b1633",
+      "dark": true,
+      "swatch": "img/DeepRed-swatch.gif",
+      "images": {
+        "flat_front": "img/DeepRed-flat_front.jpg",
+        "flat_left": "img/DeepRed-flat_left.jpg",
+        "flat_right": "img/DeepRed-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Natural",
+      "name": "Natural",
+      "hex": "#dabda0",
+      "dark": false,
+      "swatch": "img/Natural-swatch.gif",
+      "images": {
+        "flat_front": "img/Natural-flat_front.jpg",
+        "flat_left": "img/Natural-flat_left.jpg",
+        "flat_right": "img/Natural-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "NatDeepBk",
+      "name": "Natural / Deep Black",
+      "hex": "#827c70",
+      "dark": false,
+      "swatch": "img/NatDeepBk-swatch.gif",
+      "images": {
+        "flat_front": "img/NatDeepBk-flat_front.jpg",
+        "flat_left": "img/NatDeepBk-flat_left.jpg",
+        "flat_right": "img/NatDeepBk-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "NatDeepRd",
+      "name": "Natural / Deep Red",
+      "hex": "#b87073",
+      "dark": false,
+      "swatch": "img/NatDeepRd-swatch.gif",
+      "images": {
+        "flat_front": "img/NatDeepRd-flat_front.jpg",
+        "flat_left": "img/NatDeepRd-flat_left.jpg",
+        "flat_right": "img/NatDeepRd-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "NatRvBlNv",
+      "name": "Natural / River Blue Navy",
+      "hex": "#7f7d81",
+      "dark": false,
+      "swatch": "img/NatRvBlNv-swatch.gif",
+      "images": {
+        "flat_front": "img/NatRvBlNv-flat_front.jpg",
+        "flat_left": "img/NatRvBlNv-flat_left.jpg",
+        "flat_right": "img/NatRvBlNv-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "NatTrRoyl",
+      "name": "Natural / True Royal",
+      "hex": "#8792b4",
+      "dark": false,
+      "swatch": "img/NatTrRoyl-swatch.gif",
+      "images": {
+        "flat_front": "img/NatTrRoyl-flat_front.jpg",
+        "flat_left": "img/NatTrRoyl-flat_left.jpg",
+        "flat_right": "img/NatTrRoyl-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "RiverBlNv",
+      "name": "River Blue Navy",
+      "hex": "#262d39",
+      "dark": true,
+      "swatch": "img/RiverBlNv-swatch.gif",
+      "images": {
+        "flat_front": "img/RiverBlNv-flat_front.jpg",
+        "flat_left": "img/RiverBlNv-flat_left.jpg",
+        "flat_right": "img/RiverBlNv-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "StormGrey",
+      "name": "Storm Grey",
+      "hex": "#52534e",
+      "dark": true,
+      "swatch": "img/StormGrey-swatch.gif",
+      "images": {
+        "flat_front": "img/StormGrey-flat_front.jpg",
+        "flat_left": "img/StormGrey-flat_left.jpg",
+        "flat_right": "img/StormGrey-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "TrueRoyal",
+      "name": "True Royal",
+      "hex": "#3b53aa",
+      "dark": true,
+      "swatch": "img/TrueRoyal-swatch.gif",
+      "images": {
+        "flat_front": "img/TrueRoyal-flat_front.jpg",
+        "flat_left": "img/TrueRoyal-flat_left.jpg",
+        "flat_right": "img/TrueRoyal-flat_right.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 10,
+  "base": "../catalog/BG1500/"
+}

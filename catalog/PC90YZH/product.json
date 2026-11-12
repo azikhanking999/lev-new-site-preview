@@ -1,0 +1,253 @@
+{
+  "sku": "PC90YZH",
+  "handle": "youth-core-fleece-full-zip-hooded-sweatshirt",
+  "title": "Youth Core Fleece Full-Zip Hoodie",
+  "brand": "Port & Company",
+  "category": "Hoodies & Sweatshirts",
+  "sub": "Kids Sweatshirts & Hoodies",
+  "kind": "youth-zip-hoodie",
+  "price": 37.47,
+  "min": 6,
+  "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "upcharges": {},
+  "methods": [
+    "dtf",
+    "emb"
+  ],
+  "material": "Poly-Cotton Blend",
+  "fit": "Youth",
+  "tier": "Budget",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Port & Company Youth Core Fleece Full-Zip Hoodie: a poly-cotton blend sweatshirt we decorate in our Miami shop.",
+  "details": [
+    "Poly-Cotton Blend",
+    "Youth fit",
+    "Sizes XS to XL",
+    "Style PC90YZH"
+  ],
+  "views": [
+    {
+      "key": "left_chest",
+      "label": "Left chest",
+      "image": "flat_front",
+      "area": {
+        "x": 54.4,
+        "y": 34.18,
+        "w": 9.55,
+        "h": 6.37,
+        "widthIn": 3.5,
+        "heightIn": 3.5
+      },
+      "crop": {
+        "x": 2.69,
+        "y": 0.14,
+        "w": 94.55,
+        "h": 90.78
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "right_chest",
+      "label": "Right chest",
+      "image": "flat_front",
+      "area": {
+        "x": 35.3,
+        "y": 34.18,
+        "w": 9.55,
+        "h": 6.37,
+        "widthIn": 3.5,
+        "heightIn": 3.5
+      },
+      "crop": {
+        "x": 2.69,
+        "y": 0.14,
+        "w": 94.55,
+        "h": 90.78
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "back",
+      "label": "Back",
+      "image": "flat_back",
+      "area": {
+        "x": 34.21,
+        "y": 46.72,
+        "w": 30.91,
+        "h": 20.61,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 1.29,
+        "y": 18.48,
+        "w": 97.35,
+        "h": 71.87
+      }
+    }
+  ],
+  "colours": [
+    {
+      "code": "White",
+      "name": "White",
+      "hex": "#fdfdfc",
+      "dark": false,
+      "swatch": "img/White-swatch.gif",
+      "images": {
+        "model_front": "img/White-model_front.jpg",
+        "model_back": "img/White-model_back.jpg",
+        "model_side": "img/White-model_side.jpg",
+        "flat_front": "img/White-flat_front.jpg",
+        "flat_back": "img/White-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "JetBlack",
+      "name": "Jet Black",
+      "hex": "#282828",
+      "dark": true,
+      "swatch": "img/JetBlack-swatch.gif",
+      "images": {
+        "model_front": "img/JetBlack-model_front.jpg",
+        "model_back": "img/JetBlack-model_back.jpg",
+        "model_side": "img/JetBlack-model_side.jpg",
+        "flat_front": "img/JetBlack-flat_front.jpg",
+        "flat_back": "img/JetBlack-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "AthlHthr",
+      "name": "Athletic Heather",
+      "hex": "#b9b8c1",
+      "dark": false,
+      "swatch": "img/AthlHthr-swatch.gif",
+      "images": {
+        "model_front": "img/AthlHthr-model_front.jpg",
+        "model_back": "img/AthlHthr-model_back.jpg",
+        "model_side": "img/AthlHthr-model_side.jpg",
+        "flat_front": "img/AthlHthr-flat_front.jpg",
+        "flat_back": "img/AthlHthr-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Charcoal",
+      "name": "Charcoal",
+      "hex": "#2e383c",
+      "dark": true,
+      "swatch": "img/Charcoal-swatch.gif",
+      "images": {
+        "model_front": "img/Charcoal-model_front.jpg",
+        "model_back": "img/Charcoal-model_back.jpg",
+        "model_side": "img/Charcoal-model_side.jpg",
+        "flat_front": "img/Charcoal-flat_front.jpg",
+        "flat_back": "img/Charcoal-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "DarkGreen",
+      "name": "Dark Green",
+      "hex": "#15362f",
+      "dark": true,
+      "swatch": "img/DarkGreen-swatch.gif",
+      "images": {
+        "model_front": "img/DarkGreen-model_front.jpg",
+        "model_back": "img/DarkGreen-model_back.jpg",
+        "model_side": "img/DarkGreen-model_side.jpg",
+        "flat_front": "img/DarkGreen-flat_front.jpg",
+        "flat_back": "img/DarkGreen-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "DkHtGry",
+      "name": "Dark Heather Grey",
+      "hex": "#595959",
+      "dark": true,
+      "swatch": "img/DkHtGry-swatch.gif",
+      "images": {
+        "model_front": "img/DkHtGry-model_front.jpg",
+        "model_back": "img/DkHtGry-model_back.jpg",
+        "model_side": "img/DkHtGry-model_side.jpg",
+        "flat_front": "img/DkHtGry-flat_front.jpg",
+        "flat_back": "img/DkHtGry-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Kelly",
+      "name": "Kelly",
+      "hex": "#008559",
+      "dark": true,
+      "swatch": "img/Kelly-swatch.gif",
+      "images": {
+        "model_front": "img/Kelly-model_front.jpg",
+        "model_back": "img/Kelly-model_back.jpg",
+        "model_side": "img/Kelly-model_side.jpg",
+        "flat_front": "img/Kelly-flat_front.jpg",
+        "flat_back": "img/Kelly-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Navy",
+      "name": "Navy",
+      "hex": "#0f2d48",
+      "dark": true,
+      "swatch": "img/Navy-swatch.gif",
+      "images": {
+        "model_front": "img/Navy-model_front.jpg",
+        "model_back": "img/Navy-model_back.jpg",
+        "model_side": "img/Navy-model_side.jpg",
+        "flat_front": "img/Navy-flat_front.jpg",
+        "flat_back": "img/Navy-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Red",
+      "name": "Red",
+      "hex": "#832a37",
+      "dark": true,
+      "swatch": "img/Red-swatch.gif",
+      "images": {
+        "model_front": "img/Red-model_front.jpg",
+        "model_back": "img/Red-model_back.jpg",
+        "model_side": "img/Red-model_side.jpg",
+        "flat_front": "img/Red-flat_front.jpg",
+        "flat_back": "img/Red-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Royal",
+      "name": "Royal",
+      "hex": "#34539e",
+      "dark": true,
+      "swatch": "img/Royal-swatch.gif",
+      "images": {
+        "model_front": "img/Royal-model_front.jpg",
+        "model_back": "img/Royal-model_back.jpg",
+        "model_side": "img/Royal-model_side.jpg",
+        "flat_front": "img/Royal-flat_front.jpg",
+        "flat_back": "img/Royal-flat_back.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 17,
+  "base": "../catalog/PC90YZH/"
+}

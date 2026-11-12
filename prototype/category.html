@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Category · Lev Impressions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400..700&family=Graduate&family=Pacifico&family=Anton&display=swap">
+  <link rel="stylesheet" href="../theme/assets/lev-base.css">
+  <link rel="stylesheet" href="../theme/assets/lev-site.css">
+  <link rel="stylesheet" href="../theme/assets/lev-product.css">
+  <link rel="stylesheet" href="../theme/assets/lev-home.css">
+  <link rel="stylesheet" href="../theme/assets/lev-shop.css">
+  <link rel="stylesheet" href="../theme/assets/lev-category.css">
+  <script src="data.js"></script>
+  <script src="shell.js"></script>
+  <script src="../theme/assets/lev-site.js"></script>
+  <script src="../theme/assets/lev-pricing.js"></script>
+  <script src="../theme/assets/lev-cards.js"></script>
+  <script src="../theme/assets/lev-mock.js"></script>
+</head>
+<body>
+  <main>
+    <!-- Hero -->
+    <section class="cat-hero" id="cat-hero">
+      <div class="wrap">
+        <ol class="crumbs"><li><a data-link="home" href="#">Home</a></li><li><a data-link="catalog" href="#">All products</a></li><li id="crumb"></li></ol>
+        <div class="cat-hero__in">
+          <div class="cat-hero__copy">
+            <span class="t-eyebrow" id="cat-eyebrow"></span>
+            <h1 class="t-display" id="cat-title"></h1>
+            <p class="t-lead" id="cat-lead"></p>
+            <ul class="cat-facts" id="cat-facts"></ul>
+            <div class="hero__cta">
+              <a class="btn btn--accent btn--lg" id="cat-design" href="#">Start designing <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+              <a class="btn btn--ghost btn--lg" href="#styles" id="cat-see"></a>
+            </div>
+          </div>
+          <div class="hero__stage cat-hero__stage">
+            <a class="mock mock--a" id="mock-a" href="#" aria-label="See this item"></a>
+            <a class="mock mock--b" id="mock-b" href="#" aria-label="See this item"></a>
+            <a class="mock mock--c" id="mock-c" href="#" aria-label="See this item"></a>
+            <span class="sticker sticker--1" aria-hidden="true" id="cat-sticker-1"></span>
+            <span class="sticker sticker--3" aria-hidden="true" id="cat-sticker-2"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub-categories -->
+    <section class="wrap cat-subs" id="cat-subs-wrap">
+      <div class="cat-subs__row" id="cat-subs"></div>
+    </section>
+
+    <!-- Styles -->
+    <section class="wrap" id="styles">
+      <div class="shop-bar cat-bar">
+        <div class="cat-bar__left"><strong class="t-num" id="cat-count"></strong><div class="shop-cats" id="cat-fits"></div></div>
+        <div class="cat-bar__right">
+          <label class="cat-check" id="cat-emb-wrap"><input type="checkbox" id="cat-emb"><span>Embroidery available</span></label>
+          <label class="shop-sort"><span class="sr-only">Sort</span>
+            <select class="select" id="cat-sort">
+              <option value="default">Most popular first</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+              <option value="name">Name</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="pgrid cat-grid" id="cat-grid" aria-live="polite"></div>
+      <p class="shop-empty" id="cat-empty" hidden>Nothing matches those filters. <button class="pb-link" id="cat-clear" style="margin:0">Clear filters</button></p>
+    </section>
+
+    <!-- Where you can decorate -->
+    <section class="wrap section">
+      <div class="cat-deco reveal">
+        <div class="stack" style="--gap:14px">
+          <span class="t-eyebrow">Where it goes</span>
+          <h2 class="t-h1" id="deco-title"></h2>
+          <p class="t-muted" id="deco-text"></p>
+          <a class="btn btn--accent" id="deco-cta" href="#" style="justify-self:start">Try it in the studio</a>
+        </div>
+        <div class="cat-deco__right">
+          <ul class="cat-spots" id="deco-spots"></ul>
+          <div class="cat-methods" id="deco-methods"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bulk price for this category -->
+    <section class="wrap section" style="padding-top:0">
+      <div class="bulk reveal">
+        <div class="stack" style="--gap:18px">
+          <span class="t-eyebrow">Bulk pricing</span>
+          <h2 class="t-h1">Order more, pay less for each.</h2>
+          <p class="t-muted" id="bulk-note"></p>
+          <input class="range" id="bulk-range" type="range" min="6" max="320" value="24" aria-label="Quantity">
+          <div class="pc-ladder" id="bulk-ladder" style="margin-top:0"></div>
+        </div>
+        <div style="display:grid;gap:14px;justify-items:start">
+          <div class="bulk__num"><span class="t-num" id="bulk-unit" style="display:inline-block"></span> <small>each</small></div>
+          <p style="font-size:18px"><strong class="t-num" id="bulk-qty"></strong> pieces · <span class="t-num" id="bulk-total"></span> total with setup</p>
+          <span class="tag tag--good" id="bulk-tag" style="justify-self:start"></span>
+          <a class="btn btn--accent btn--lg" id="bulk-cta" href="#" style="justify-self:start">Price your order</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Questions -->
+    <section class="wrap section" style="padding-top:0">
+      <div class="section__head reveal"><span class="t-eyebrow">Questions</span><h2 class="t-h1" id="faq-title"></h2></div>
+      <div class="faq" id="cat-faq" style="max-width:820px"></div>
+    </section>
+
+    <!-- Other categories -->
+    <section class="wrap section" style="padding-top:0">
+      <div class="section__head reveal"><span class="t-eyebrow">Keep looking</span><h2 class="t-h1">More to make.</h2></div>
+      <div class="cats cat-others" id="cat-others"></div>
+    </section>
+
+    <section class="wrap">
+      <div class="closer reveal">
+        <h2 class="t-display" style="font-size:clamp(40px,7vw,104px)" id="closer-title"></h2>
+        <a class="btn btn--lg" id="closer-cta" href="#">Start designing</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var D = window.LEV_DATA, P = window.LevPricing, q = new URLSearchParams(location.search);
+      function $(id) { return document.getElementById(id); }
+      function get(url) { return fetch(url).then(function (r) { if (!r.ok) throw new Error(url); return r.json(); }); }
+      var ARROW = '<svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
+      var GLYPH = {
+        "Shirts": "M247.59,61.22,195.83,33A8,8,0,0,0,192,32H160a8,8,0,0,0-8,8,24,24,0,0,1-48,0,8,8,0,0,0-8-8H64a8,8,0,0,0-3.84,1L8.41,61.22A15.76,15.76,0,0,0,1.82,82.48l19.27,36.81A16.37,16.37,0,0,0,35.67,128H56v80a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V128h20.34a16.37,16.37,0,0,0,14.58-8.71l19.27-36.81A15.76,15.76,0,0,0,247.59,61.22Z",
+        "Hoodies & Sweatshirts": "M237.31,120.53,183,39.12A16,16,0,0,0,169.73,32H86.27A16,16,0,0,0,73,39.12L18.69,120.53a16,16,0,0,0-2.13,13.09L38,212.21A16,16,0,0,0,53.43,224H80a16,16,0,0,0,16-16V192h64v16a16,16,0,0,0,16,16h26.57A16,16,0,0,0,218,212.21l21.44-78.59A16,16,0,0,0,237.31,120.53Z",
+        "Hats": "M128,24A104.12,104.12,0,0,0,24,128v56a24,24,0,0,0,24,24,24.11,24.11,0,0,0,14.18-4.64C74.33,194.53,95.6,184,128,184s53.67,10.52,65.81,19.35A24,24,0,0,0,232,184V128A104.12,104.12,0,0,0,128,24Z",
+        "Bags": "M236,69.4A16.13,16.13,0,0,0,223.92,64H176a48,48,0,0,0-96,0H32.08a16.13,16.13,0,0,0-12,5.4,16,16,0,0,0-3.92,12.48l14.26,120a16,16,0,0,0,16,14.12H209.67a16,16,0,0,0,16-14.12l14.26-120A16,16,0,0,0,236,69.4ZM128,32a32,32,0,0,1,32,32H96A32,32,0,0,1,128,32Z"
+      };
+      /* What each category page says. Facts and prices are worked out from the catalog. */
+      var CATS = {
+        "Shirts": {
+          tone: "--bg:var(--violet);--fg:#fff", tile: "--bg:var(--accent)", eyebrow: "Custom shirts", title: "Custom shirts,<br>printed your way.",
+          lead: "Tees, long sleeves, polos and performance shirts for adults and kids. Add your design in the studio and watch the price as you build it.",
+          stickers: ["No colour<br>limits", "From infant to 6XL"],
+          hero: [["PC54", "Gold", "reunion"], ["K110", ["Navy", "True Navy", "Deep Black"], "electric", "left_chest"], ["PC54", "Navy", "varsity"]],
+          decoTitle: "Front, back, sleeves or a chest logo.", decoText: "Tees take a design on the front, the back and both sleeves. Polos take a logo on either side of the chest, plus the back and sleeves.",
+          closer: "Got an idea?<br>Put it on a shirt.",
+          faq: [["Which shirt should I pick?", "For events and teams, a cotton tee keeps the cost down. For sport, pick a performance shirt. For staff, a polo with a chest logo looks sharper."],
+                ["Can kids and adults wear the same design?", "Yes. Order infant, toddler, youth and adult shirts with one design. The studio fits it to each size of print area."],
+                ["Print or embroidery?", "Tees are printed. Polos can be printed or embroidered: embroidery suits a small logo, print suits anything with many colours."],
+                ["Do larger sizes cost more?", "Sizes 2XL and up add a small amount because the blank shirt costs more. Each item shows it under the size."]]
+        },
+        "Hoodies & Sweatshirts": {
+          tone: "--bg:var(--ink);--fg:#fff", eyebrow: "Custom hoodies & sweatshirts", title: "Hoodies and crews,<br>made to be kept.",
+          lead: "Pullover hoodies, zip-ups and crewneck sweatshirts in fleece, for adults and kids. Printed in full colour or embroidered.",
+          stickers: ["Print or<br>embroidery", "Adult and kids"],
+          hero: [["PC78H", ["Red", "Royal", "Gold"], "team"], ["PC78", ["Athletic Heather", "Ash", "White"], "swim"], ["PC78H", ["Jet Black", "Navy", "Charcoal"], "climbing"]],
+          decoTitle: "Above the pocket, across the back, down the sleeve.", decoText: "Pullovers take a design on the chest above the pocket. Zip-ups take a logo on either side of the zipper. Both take a large back design and sleeve prints.",
+          closer: "Cold outside?<br>Put your name on it.",
+          faq: [["Can you print across a zipper?", "No. On zip-ups the design goes on the left or right chest and on the back, so nothing is split by the zipper."],
+                ["How big can the back design be?", "Up to about 14 inches wide on adult hoodies. The studio shows the exact area on each item."],
+                ["Print or embroidery on fleece?", "Both work. Embroidery is the classic for a chest logo; print is better for large or colourful designs."],
+                ["Do you have kids' sizes?", "Yes: youth, toddler and infant hoodies and crews, so a whole family or team can match."]]
+        },
+        "Hats": {
+          tone: "--bg:var(--sun)", eyebrow: "Custom hats", title: "Caps with your<br>logo up front.",
+          lead: "Structured caps with a stitched or printed front. Embroidery is the favourite here: it sits flat, looks sharp and lasts.",
+          stickers: ["Embroidered<br>or printed", "One size fits most"],
+          hero: [["STC54", ["True Royal / White", "TRyWhite"], "monogram", null, true], ["STC54", ["Black / White", "BlkWhite"], "cursive", null, true], ["STC54", ["Black / Black", "BlkBlk"], "supply", null, true]],
+          decoTitle: "On the front panel.", decoText: "The logo goes on the front of the cap. Keep it bold and simple: small lettering is hard to read in thread.",
+          closer: "Top it off.<br>Design your cap.",
+          faq: [["Embroidery or print on a cap?", "Embroidery, most of the time. It handles the curve of the cap well. Print is there for designs with many colours or fine detail."],
+                ["How big can the logo be?", "About 4 inches wide by 2.25 inches tall on the front panel."],
+                ["What is the minimum?", "Six caps. You can mix colours of the same cap in one order."],
+                ["Do the caps adjust?", "Yes, the cap we carry has a snapback closure that fits most adults."]]
+        },
+        "Bags": {
+          tone: "--bg:var(--card)", eyebrow: "Custom bags", title: "Totes that carry<br>your name.",
+          lead: "Cotton and canvas totes with two printable sides. Good for events, shops, markets and gifts.",
+          stickers: ["Two printable<br>sides", "From 6 pieces"],
+          hero: [["BG1500", ["Natural / Deep Red", "Deep Red", "Natural"], "bookclub"], ["BG424", ["Natural"], "small"], ["BG420", ["Natural"], "market"]],
+          decoTitle: "One side, or both.", decoText: "Each tote has two flat sides. Put the same design on both, or a logo on one and a message on the other.",
+          closer: "Carry it.<br>Design your tote.",
+          faq: [["Can I print both sides?", "Yes. Each side is priced as its own print, and the studio lets you design them separately."],
+                ["Which tote is the sturdiest?", "The canvas totes are heavier than the core cotton tote. The jumbo tote is the largest."],
+                ["Print or embroidery?", "Both are offered. Print suits large designs; embroidery suits a small logo."],
+                ["What is the minimum?", "Six totes."]]
+        }
+      };
+
+      Promise.all([get(D.index), get(D.pricing)]).then(function (d) {
+        var index = d[0].items, pricing = d[1];
+        var cat = q.get("cat"); if (!CATS[cat]) { location.replace(D.url.catalog()); return; }
+        var C = CATS[cat], items = index.filter(function (i) { return i.category === cat; });
+        var state = { sub: q.get("sub") || "", fit: "", emb: false, sort: "default" };
+        var plural = function (n) { return n + (n === 1 ? " style" : " styles"); };
+        var from = function (i) { return LevCards.from(i, pricing); };
+        var top = items[0];
+
+        // hero
+        document.title = C.eyebrow + " · Lev Impressions";
+        $("crumb").textContent = cat; $("cat-eyebrow").textContent = C.eyebrow; $("cat-title").innerHTML = C.title; $("cat-lead").textContent = C.lead;
+        $("cat-hero").setAttribute("style", C.tone);
+        $("cat-sticker-1").innerHTML = C.stickers[0]; $("cat-sticker-2").innerHTML = C.stickers[1];
+        var lowest = Math.min.apply(null, items.map(from)), colours = Math.max.apply(null, items.map(function (i) { return i.colourCount; }));
+        var hasEmb = items.some(function (i) { return i.methods.indexOf("emb") >= 0; });
+        $("cat-facts").innerHTML = [[plural(items.length), "to choose from"], ["from " + P.money(lowest), "each for 50, decorated"], ["up to " + colours, "colours per style"], ["min 6", hasEmb ? "print or embroidery" : "full-colour print"]]
+          .map(function (f) { return "<li><strong class=\"t-num\">" + f[0] + "</strong><span>" + f[1] + "</span></li>"; }).join("");
+        $("cat-design").href = D.url.studio(top.sku, top.colours[0].code); $("deco-cta").href = $("cat-design").href; $("closer-cta").href = $("cat-design").href;
+        $("cat-see").textContent = "See all " + plural(items.length);
+        $("closer-title").innerHTML = C.closer;
+        var slots = [$("mock-a"), $("mock-b"), $("mock-c")], skus = [];
+        C.hero.forEach(function (h) { if (skus.indexOf(h[0]) < 0) skus.push(h[0]); });
+        Promise.all(skus.map(function (s) { return get(D.product(s)).catch(function () { return null; }); })).then(function (ps) {
+          var by = {}; ps.forEach(function (p) { if (p) by[p.sku] = p; });
+          C.hero.forEach(function (h, n) {
+            if (!by[h[0]]) { slots[n].hidden = true; return; }
+            var made = LevMock.inner(by[h[0]], { colour: h[1], design: h[2], view: h[3] || undefined, onDark: h[4] });
+            slots[n].appendChild(made.el); slots[n].href = D.url.product(h[0], made.colour.code);
+          });
+          // bulk slider uses the category's most ordered item with its usual first decoration
+          var tp = by[top.sku];
+          var run = function (product) {
+            var v = product.views[0], tier = v.maxTier === "s" ? "s" : "m", range = $("bulk-range"), unit = $("bulk-unit");
+            $("bulk-note").textContent = "Drag to see the price of the " + product.title + " with a " + (tier === "s" ? "small " : "medium ") + v.label.toLowerCase() + " " + (product.methods[0] === "emb" ? "embroidery" : "print") + ". The discount covers the item and the decoration.";
+            var draw = function () {
+              var n = +range.value, qu = P.quote(pricing, { blank: product.price, method: product.methods[0], qty: n, locations: [{ key: v.key, tier: tier }] });
+              range.style.setProperty("--fill", ((n - 6) / (320 - 6)) * 100 + "%");
+              if (unit.textContent !== P.money(qu.unit)) { unit.textContent = P.money(qu.unit); unit.classList.remove("is-swap"); void unit.offsetWidth; unit.classList.add("is-swap"); }
+              $("bulk-qty").textContent = n; $("bulk-total").textContent = P.money(qu.total);
+              $("bulk-tag").textContent = qu.discountPct ? Math.round(qu.discountPct) + "% off every piece" : "Discounts start at 12 pieces";
+              $("bulk-ladder").innerHTML = pricing.discountTiers.map(function (t, i) { var nx = (pricing.discountTiers[i + 1] || {}).from, on = n >= t.from && (!nx || n < nx); return '<div class="pc-step' + (on ? " is-on" : "") + (n >= t.from ? " is-reached" : "") + '"><strong>' + (t.pct ? "-" + Math.round(t.pct) + "%" : "Base") + '</strong><span class="t-num">' + t.from + (nx ? "–" + (nx - 1) : "+") + "</span></div>"; }).join("");
+            };
+            range.addEventListener("input", draw); draw();
+            $("bulk-cta").href = D.url.product(product.sku) + "#calc";
+          };
+          if (tp) run(tp); else get(D.product(top.sku)).then(run);
+        });
+
+        // sub-category tiles
+        var subs = []; items.forEach(function (i) { if (i.sub && subs.indexOf(i.sub) < 0) subs.push(i.sub); });
+        function drawSubs() {
+          var box = $("cat-subs"); box.innerHTML = "";
+          if (subs.length < 2) { $("cat-subs-wrap").hidden = true; return; }
+          [""].concat(subs).forEach(function (s) {
+            var list = items.filter(function (i) { return !s || i.sub === s; }), pic = list[0];
+            var b = document.createElement("button"); b.className = "cat-sub" + (state.sub === s ? " is-on" : "");
+            b.innerHTML = '<span class="cat-sub__img' + (pic.cardCrop ? " is-contain" : "") + '"><img src="' + pic.base + pic.thumb + '" alt="" loading="lazy"></span><span class="cat-sub__txt"><strong>' + (s || "All " + cat.toLowerCase()) + "</strong><em>" + plural(list.length) + "</em></span>";
+            b.addEventListener("click", function () { state.sub = s; history.replaceState(null, "", D.url.catalog(cat, s)); drawSubs(); draw(); document.getElementById("styles").scrollIntoView({ behavior: "smooth", block: "start" }); });
+            box.appendChild(b);
+          });
+        }
+
+        // grid + filters
+        var fits = []; items.forEach(function (i) { if (i.fit && fits.indexOf(i.fit) < 0) fits.push(i.fit); });
+        $("cat-emb-wrap").hidden = !hasEmb || items.every(function (i) { return i.methods.indexOf("emb") >= 0; });
+        function draw() {
+          var list = items.filter(function (i) { return (!state.sub || i.sub === state.sub) && (!state.fit || i.fit === state.fit) && (!state.emb || i.methods.indexOf("emb") >= 0); });
+          if (state.sort === "low" || state.sort === "high") list = list.slice().sort(function (a, b) { return (from(a) - from(b)) * (state.sort === "low" ? 1 : -1); });
+          if (state.sort === "name") list = list.slice().sort(function (a, b) { return a.title.localeCompare(b.title); });
+          var grid = $("cat-grid"); grid.innerHTML = "";
+          list.forEach(function (item, n) { grid.appendChild(LevCards.card(item, pricing, D.url, { reveal: true, i: Math.min(n, 11), badge: item === top && !state.sub && !state.fit ? "Most ordered" : "" })); });
+          $("cat-count").textContent = plural(list.length) + (state.sub ? " in " + state.sub : "");
+          $("cat-empty").hidden = list.length > 0;
+          var fitBox = $("cat-fits"); fitBox.innerHTML = "";
+          if (fits.length > 1) [""].concat(fits).forEach(function (f) {
+            var b = document.createElement("button"); b.className = "chip" + (state.fit === f ? " is-on" : ""); b.textContent = f || "Everyone";
+            b.addEventListener("click", function () { state.fit = f; draw(); }); fitBox.appendChild(b);
+          });
+          window.LevSite.reveal();
+        }
+        $("cat-emb").addEventListener("change", function (e) { state.emb = e.target.checked; draw(); });
+        $("cat-sort").addEventListener("change", function (e) { state.sort = e.target.value; draw(); });
+        $("cat-clear").addEventListener("click", function () { state.sub = ""; state.fit = ""; state.emb = false; $("cat-emb").checked = false; drawSubs(); draw(); });
+        drawSubs(); draw();
+
+        // where it goes
+        $("deco-title").textContent = C.decoTitle; $("deco-text").textContent = C.decoText;
+        var spots = []; items.forEach(function (i) { i.locations.forEach(function (l) { if (spots.indexOf(l) < 0) spots.push(l); }); });
+        $("deco-spots").innerHTML = spots.map(function (l) { var n = items.filter(function (i) { return i.locations.indexOf(l) >= 0; }).length; return "<li><strong>" + l + "</strong><span>" + (n === items.length ? "every style" : plural(n)) + "</span></li>"; }).join("");
+        var methods = ["dtf", "emb"].filter(function (m) { return items.some(function (i) { return i.methods.indexOf(m) >= 0; }); });
+        $("deco-methods").innerHTML = methods.map(function (m) { var t = pricing.methods[m].tiers; return '<div class="cat-method"><span class="t-eyebrow">' + pricing.methods[m].long + "</span><strong>from " + P.money(t[0].price) + ' <small>a piece</small></strong><p>' + pricing.methods[m].blurb + " Sizes from " + t[0].size.toLowerCase().replace("up to ", "") + " to " + t[t.length - 1].size.toLowerCase().replace("up to ", "") + ".</p></div>"; }).join("");
+
+        // questions
+        $("faq-title").textContent = "About our " + cat.toLowerCase() + ".";
+        $("cat-faq").innerHTML = C.faq.map(function (f) { return "<details><summary>" + f[0] + "</summary><p>" + f[1] + "</p></details>"; }).join("");
+
+        // other categories
+        $("cat-others").innerHTML = Object.keys(CATS).filter(function (c) { return c !== cat; }).map(function (c, n) {
+          var count = index.filter(function (i) { return i.category === c; }).length;
+          return '<a class="cat reveal" data-link="catalog:' + c + '" href="#" style="' + (CATS[c].tile || CATS[c].tone) + ";--i:" + n + '"><svg class="glyph" viewBox="0 0 256 256"><path d="' + GLYPH[c] + '" fill="currentColor"/></svg><div><h3>' + c + '</h3></div><div class="stack" style="--gap:14px"><p>' + CATS[c].lead.split(".")[0] + '.</p><span class="go">' + plural(count) + " " + ARROW + "</span></div></a>";
+        }).join("");
+
+        window.LevResolveLinks && window.LevResolveLinks(document);
+        window.LevSite.reveal();
+      });
+    })();
+  </script>
+</body>
+</html>

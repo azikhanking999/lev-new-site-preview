@@ -1,0 +1,126 @@
+{
+  "sku": "B050",
+  "handle": "b050-ideal-twill-convention-tote",
+  "title": "Ideal Twill Convention Tote",
+  "brand": "Port Authority",
+  "category": "Bags",
+  "sub": "Tote Bags",
+  "kind": "bag",
+  "price": 12.03,
+  "min": 6,
+  "sizes": [
+    "One size"
+  ],
+  "upcharges": {},
+  "methods": [
+    "dtf",
+    "emb"
+  ],
+  "material": "100% Cotton",
+  "fit": "",
+  "tier": "Moderate",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Port Authority Ideal Twill Convention Tote: a 100% cotton bag we decorate in our Miami shop.",
+  "details": [
+    "100% Cotton",
+    "Sizes One size",
+    "Style B050"
+  ],
+  "views": [
+    {
+      "key": "side1",
+      "label": "Side 1",
+      "image": "img_0",
+      "area": {
+        "x": 19.66,
+        "y": 44.36,
+        "w": 59.6,
+        "h": 39.73,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 99.67,
+        "h": 99.66
+      }
+    },
+    {
+      "key": "side2",
+      "label": "Side 2",
+      "image": "img_0",
+      "area": {
+        "x": 19.66,
+        "y": 44.36,
+        "w": 59.6,
+        "h": 39.73,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 99.67,
+        "h": 99.66
+      }
+    }
+  ],
+  "cardImage": "img_0",
+  "cardCrop": {
+    "x": 9.42,
+    "y": 8.94,
+    "w": 80.58,
+    "h": 81.0
+  },
+  "colours": [
+    {
+      "code": "Black",
+      "name": "Black",
+      "hex": "#282828",
+      "dark": true,
+      "swatch": "img/Black-swatch.gif",
+      "images": {
+        "img_0": "img/Black-img_0.jpg",
+        "img_1": "img/Black-img_1.jpg",
+        "img_2": "img/Black-img_2.jpg",
+        "img_3": "img/Black-img_3.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Natural",
+      "name": "Natural",
+      "hex": "#f1e9d4",
+      "dark": false,
+      "swatch": "img/Natural-swatch.gif",
+      "images": {
+        "img_0": "img/Natural-img_0.jpg",
+        "img_1": "img/Natural-img_1.jpg",
+        "img_2": "img/Natural-img_2.jpg",
+        "img_3": "img/Natural-img_3.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Navy",
+      "name": "Navy",
+      "hex": "#0f2d48",
+      "dark": true,
+      "swatch": "img/Navy-swatch.gif",
+      "images": {
+        "img_0": "img/Navy-img_0.jpg",
+        "img_1": "img/Navy-img_1.jpg",
+        "img_2": "img/Navy-img_2.jpg",
+        "img_3": "img/Navy-img_3.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 3,
+  "base": "../catalog/B050/"
+}

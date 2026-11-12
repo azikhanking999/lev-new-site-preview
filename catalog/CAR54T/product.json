@@ -1,0 +1,229 @@
+{
+  "sku": "CAR54T",
+  "handle": "port-co\u2122-toddler-core-cotton-tee",
+  "title": "Toddler Core Cotton Tee",
+  "brand": "Port & Company",
+  "category": "Shirts",
+  "sub": "Kids Shirts & Baby Onesies",
+  "kind": "toddler-tee",
+  "price": 6.42,
+  "min": 6,
+  "sizes": [
+    "2T",
+    "3T",
+    "4T"
+  ],
+  "upcharges": {},
+  "methods": [
+    "dtf"
+  ],
+  "material": "100% Cotton",
+  "fit": "Toddler",
+  "tier": "Budget",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Port & Company Toddler Core Cotton Tee: a 100% cotton shirt we decorate in our Miami shop.",
+  "details": [
+    "100% Cotton",
+    "Toddler fit",
+    "Sizes 2T to 4T",
+    "Style CAR54T"
+  ],
+  "views": [
+    {
+      "key": "front",
+      "label": "Front",
+      "image": "flat_front",
+      "area": {
+        "x": 32.28,
+        "y": 24.28,
+        "w": 36.27,
+        "h": 27.63,
+        "widthIn": 7,
+        "heightIn": 8
+      },
+      "crop": {
+        "x": 0.0,
+        "y": 7.02,
+        "w": 100.0,
+        "h": 74.36
+      }
+    },
+    {
+      "key": "back",
+      "label": "Back",
+      "image": "flat_back",
+      "area": {
+        "x": 31.29,
+        "y": 17.61,
+        "w": 37.34,
+        "h": 28.45,
+        "widthIn": 7,
+        "heightIn": 8
+      },
+      "crop": {
+        "x": 0.0,
+        "y": 6.79,
+        "w": 100.0,
+        "h": 71.31
+      }
+    }
+  ],
+  "colours": [
+    {
+      "code": "White",
+      "name": "White",
+      "hex": "#e8e8e8",
+      "dark": false,
+      "swatch": "img/White-swatch.gif",
+      "images": {
+        "model_front": "img/White-model_front.jpg",
+        "model_back": "img/White-model_back.jpg",
+        "model_side": "img/White-model_side.jpg",
+        "flat_front": "img/White-flat_front.jpg",
+        "flat_back": "img/White-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "JetBlack",
+      "name": "Jet Black",
+      "hex": "#242424",
+      "dark": true,
+      "swatch": "img/JetBlack-swatch.gif",
+      "images": {
+        "model_front": "img/JetBlack-model_front.jpg",
+        "model_back": "img/JetBlack-model_back.jpg",
+        "model_side": "img/JetBlack-model_side.jpg",
+        "flat_front": "img/JetBlack-flat_front.jpg",
+        "flat_back": "img/JetBlack-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "AquaticBl",
+      "name": "Aquatic Blue",
+      "hex": "#66c9de",
+      "dark": false,
+      "swatch": "img/AquaticBl-swatch.gif",
+      "images": {
+        "model_front": "img/AquaticBl-model_front.jpg",
+        "model_back": "img/AquaticBl-model_back.jpg",
+        "model_side": "img/AquaticBl-model_side.jpg",
+        "flat_front": "img/AquaticBl-flat_front.jpg",
+        "flat_back": "img/AquaticBl-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "AthlHthr",
+      "name": "Athletic Heather",
+      "hex": "#9e9fa2",
+      "dark": false,
+      "swatch": "img/AthlHthr-swatch.gif",
+      "images": {
+        "model_front": "img/AthlHthr-model_front.jpg",
+        "model_back": "img/AthlHthr-model_back.jpg",
+        "model_side": "img/AthlHthr-model_side.jpg",
+        "flat_front": "img/AthlHthr-flat_front.jpg",
+        "flat_back": "img/AthlHthr-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "CandyPink",
+      "name": "Candy Pink",
+      "hex": "#e78fb7",
+      "dark": false,
+      "swatch": "img/CandyPink-swatch.gif",
+      "images": {
+        "model_front": "img/CandyPink-model_front.jpg",
+        "model_back": "img/CandyPink-model_back.jpg",
+        "model_side": "img/CandyPink-model_side.jpg",
+        "flat_front": "img/CandyPink-flat_front.jpg",
+        "flat_back": "img/CandyPink-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "CloverGrn",
+      "name": "Clover Green",
+      "hex": "#20934f",
+      "dark": true,
+      "swatch": "img/CloverGrn-swatch.gif",
+      "images": {
+        "model_front": "img/CloverGrn-model_front.jpg",
+        "model_back": "img/CloverGrn-model_back.jpg",
+        "model_side": "img/CloverGrn-model_side.jpg",
+        "flat_front": "img/CloverGrn-flat_front.jpg",
+        "flat_back": "img/CloverGrn-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Navy",
+      "name": "Navy",
+      "hex": "#272e3e",
+      "dark": true,
+      "swatch": "img/Navy-swatch.gif",
+      "images": {
+        "model_front": "img/Navy-model_front.jpg",
+        "model_back": "img/Navy-model_back.jpg",
+        "model_side": "img/Navy-model_side.jpg",
+        "flat_front": "img/Navy-flat_front.jpg",
+        "flat_back": "img/Navy-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Purple",
+      "name": "Purple",
+      "hex": "#544684",
+      "dark": true,
+      "swatch": "img/Purple-swatch.gif",
+      "images": {
+        "model_front": "img/Purple-model_front.jpg",
+        "model_back": "img/Purple-model_back.jpg",
+        "model_side": "img/Purple-model_side.jpg",
+        "flat_front": "img/Purple-flat_front.jpg",
+        "flat_back": "img/Purple-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Red",
+      "name": "Red",
+      "hex": "#c23138",
+      "dark": true,
+      "swatch": "img/Red-swatch.gif",
+      "images": {
+        "model_front": "img/Red-model_front.jpg",
+        "model_back": "img/Red-model_back.jpg",
+        "model_side": "img/Red-model_side.jpg",
+        "flat_front": "img/Red-flat_front.jpg",
+        "flat_back": "img/Red-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Royal",
+      "name": "Royal",
+      "hex": "#1f54a4",
+      "dark": true,
+      "swatch": "img/Royal-swatch.gif",
+      "images": {
+        "model_front": "img/Royal-model_front.jpg",
+        "model_back": "img/Royal-model_back.jpg",
+        "model_side": "img/Royal-model_side.jpg",
+        "flat_front": "img/Royal-flat_front.jpg",
+        "flat_back": "img/Royal-flat_back.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 13,
+  "base": "../catalog/CAR54T/"
+}

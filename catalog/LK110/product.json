@@ -1,0 +1,302 @@
+{
+  "sku": "LK110",
+  "handle": "lk110-port-authority-womens-dry-zone-uv-micro-mesh-polo",
+  "title": "Women's Dry Zone UV Micro-Mesh Polo",
+  "brand": "Port Authority",
+  "category": "Shirts",
+  "sub": "Polo Shirts",
+  "kind": "polo",
+  "price": 28.47,
+  "min": 6,
+  "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL"
+  ],
+  "upcharges": {
+    "2XL": 1.1,
+    "3XL": 4.4,
+    "4XL": 4.4
+  },
+  "methods": [
+    "dtf",
+    "emb"
+  ],
+  "material": "100% Polyester",
+  "fit": "Women's",
+  "tier": "Moderate",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Port Authority Women's Dry Zone UV Micro-Mesh Polo: a 100% polyester shirt we decorate in our Miami shop.",
+  "details": [
+    "100% Polyester",
+    "Women's fit",
+    "Sizes XS to 4XL",
+    "Style LK110"
+  ],
+  "views": [
+    {
+      "key": "left_chest",
+      "label": "Left chest",
+      "image": "flat_front",
+      "area": {
+        "x": 54.53,
+        "y": 27.07,
+        "w": 14.31,
+        "h": 9.54,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "crop": {
+        "x": 0.0,
+        "y": 4.85,
+        "w": 100.0,
+        "h": 85.8
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "right_chest",
+      "label": "Right chest",
+      "image": "flat_front",
+      "area": {
+        "x": 30.15,
+        "y": 27.07,
+        "w": 14.31,
+        "h": 9.54,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "crop": {
+        "x": 0.0,
+        "y": 4.85,
+        "w": 100.0,
+        "h": 85.8
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "back",
+      "label": "Back",
+      "image": "flat_back",
+      "area": {
+        "x": 33.23,
+        "y": 18.82,
+        "w": 36.46,
+        "h": 27.78,
+        "widthIn": 14,
+        "heightIn": 16
+      },
+      "crop": {
+        "x": 0.0,
+        "y": 5.43,
+        "w": 100.0,
+        "h": 83.32
+      }
+    },
+    {
+      "key": "right_sleeve",
+      "label": "Right sleeve",
+      "image": "model_side",
+      "crop": {
+        "x": 4,
+        "y": 26,
+        "w": 62,
+        "h": 41.33
+      },
+      "area": {
+        "x": 34.9,
+        "y": 39.3,
+        "w": 11,
+        "h": 7.33,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "maxTier": "s"
+    },
+    {
+      "key": "left_sleeve",
+      "label": "Left sleeve",
+      "image": "model_side",
+      "crop": {
+        "x": 4,
+        "y": 26,
+        "w": 62,
+        "h": 41.33
+      },
+      "area": {
+        "x": 34.9,
+        "y": 39.3,
+        "w": 11,
+        "h": 7.33,
+        "widthIn": 4,
+        "heightIn": 4
+      },
+      "maxTier": "s",
+      "mirror": true
+    }
+  ],
+  "colours": [
+    {
+      "code": "White",
+      "name": "White",
+      "hex": "#eaeaea",
+      "dark": false,
+      "swatch": "img/White-swatch.gif",
+      "images": {
+        "model_front": "img/White-model_front.jpg",
+        "model_back": "img/White-model_back.jpg",
+        "model_side": "img/White-model_side.jpg",
+        "flat_front": "img/White-flat_front.jpg",
+        "flat_back": "img/White-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "DeepBlack",
+      "name": "Deep Black",
+      "hex": "#2c2c2c",
+      "dark": true,
+      "swatch": "img/DeepBlack-swatch.gif",
+      "images": {
+        "model_front": "img/DeepBlack-model_front.jpg",
+        "model_back": "img/DeepBlack-model_back.jpg",
+        "model_side": "img/DeepBlack-model_side.jpg",
+        "flat_front": "img/DeepBlack-flat_front.jpg",
+        "flat_back": "img/DeepBlack-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Aquamarine",
+      "name": "Aquamarine",
+      "hex": "#17b3b3",
+      "dark": false,
+      "swatch": "img/Aquamarine-swatch.gif",
+      "images": {
+        "model_front": "img/Aquamarine-model_front.jpg",
+        "model_back": "img/Aquamarine-model_back.jpg",
+        "model_side": "img/Aquamarine-model_side.jpg",
+        "flat_front": "img/Aquamarine-flat_front.jpg",
+        "flat_back": "img/Aquamarine-flat_back.jpg",
+        "model_lifestyle": "img/Aquamarine-model_lifestyle.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "BrtKelGn",
+      "name": "Bright Kelly Green",
+      "hex": "#107d4c",
+      "dark": true,
+      "swatch": "img/BrtKelGn-swatch.gif",
+      "images": {
+        "model_front": "img/BrtKelGn-model_front.jpg",
+        "model_back": "img/BrtKelGn-model_back.jpg",
+        "model_side": "img/BrtKelGn-model_side.jpg",
+        "flat_front": "img/BrtKelGn-flat_front.jpg",
+        "flat_back": "img/BrtKelGn-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Burgundy",
+      "name": "Burgundy",
+      "hex": "#6c2f39",
+      "dark": true,
+      "swatch": "img/Burgundy-swatch.gif",
+      "images": {
+        "model_front": "img/Burgundy-model_front.jpg",
+        "model_back": "img/Burgundy-model_back.jpg",
+        "model_side": "img/Burgundy-model_side.jpg",
+        "flat_front": "img/Burgundy-flat_front.jpg",
+        "flat_back": "img/Burgundy-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "CarolinaBl",
+      "name": "Carolina Blue",
+      "hex": "#69abd1",
+      "dark": false,
+      "swatch": "img/CarolinaBl-swatch.gif",
+      "images": {
+        "model_front": "img/CarolinaBl-model_front.jpg",
+        "model_back": "img/CarolinaBl-model_back.jpg",
+        "model_side": "img/CarolinaBl-model_side.jpg",
+        "flat_front": "img/CarolinaBl-flat_front.jpg",
+        "flat_back": "img/CarolinaBl-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "CoastalBl",
+      "name": "Coastal Blue",
+      "hex": "#077cdc",
+      "dark": true,
+      "swatch": "img/CoastalBl-swatch.gif",
+      "images": {
+        "model_front": "img/CoastalBl-model_front.jpg",
+        "model_back": "img/CoastalBl-model_back.jpg",
+        "model_side": "img/CoastalBl-model_side.jpg",
+        "flat_front": "img/CoastalBl-flat_front.jpg",
+        "flat_back": "img/CoastalBl-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "CorlSplash",
+      "name": "Coral Splash",
+      "hex": "#ff7b63",
+      "dark": false,
+      "swatch": "img/CorlSplash-swatch.gif",
+      "images": {
+        "model_front": "img/CorlSplash-model_front.jpg",
+        "model_back": "img/CorlSplash-model_back.jpg",
+        "model_side": "img/CorlSplash-model_side.jpg",
+        "flat_front": "img/CorlSplash-flat_front.jpg",
+        "flat_back": "img/CorlSplash-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "DpForGrn",
+      "name": "Deep Forest Green",
+      "hex": "#1b5039",
+      "dark": true,
+      "swatch": "img/DpForGrn-swatch.gif",
+      "images": {
+        "model_front": "img/DpForGrn-model_front.jpg",
+        "model_back": "img/DpForGrn-model_back.jpg",
+        "model_side": "img/DpForGrn-model_side.jpg",
+        "flat_front": "img/DpForGrn-flat_front.jpg",
+        "flat_back": "img/DpForGrn-flat_back.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "TrueRoyal",
+      "name": "True Royal",
+      "hex": "#33448c",
+      "dark": true,
+      "swatch": "img/TrueRoyal-swatch.gif",
+      "images": {
+        "model_front": "img/TrueRoyal-model_front.jpg",
+        "model_back": "img/TrueRoyal-model_back.jpg",
+        "model_side": "img/TrueRoyal-model_side.jpg",
+        "flat_front": "img/TrueRoyal-flat_front.jpg",
+        "flat_back": "img/TrueRoyal-flat_back.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 16,
+  "base": "../catalog/LK110/"
+}

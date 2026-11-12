@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>All products · Lev Impressions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400..700&display=swap">
+  <link rel="stylesheet" href="../theme/assets/lev-base.css">
+  <link rel="stylesheet" href="../theme/assets/lev-site.css">
+  <link rel="stylesheet" href="../theme/assets/lev-shop.css">
+  <script src="data.js"></script>
+  <script src="shell.js"></script>
+  <script src="../theme/assets/lev-site.js"></script>
+  <script src="../theme/assets/lev-pricing.js"></script>
+  <script src="../theme/assets/lev-cards.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <ol class="crumbs"><li><a data-link="home" href="#">Home</a></li><li id="crumb">All products</li></ol>
+
+    <header class="shop-head">
+      <div class="stack" style="--gap:10px">
+        <h1 class="t-h1" id="shop-title">All products</h1>
+        <p class="t-lead" id="shop-lead">Every item here can be printed or embroidered with your design. Pick one to open it in the design studio.</p>
+      </div>
+      <div class="shop-count"><strong class="t-num" id="shop-count">0</strong><span>items</span></div>
+    </header>
+
+    <div class="shop-bar">
+      <div class="shop-cats" id="shop-cats" role="tablist" aria-label="Category"></div>
+      <label class="shop-sort"><span class="sr-only">Sort</span>
+        <select class="select" id="shop-sort">
+          <option value="default">Most popular first</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="name">Name</option>
+        </select>
+      </label>
+    </div>
+    <div class="shop-subs" id="shop-subs"></div>
+
+    <section class="pgrid" id="shop-grid" aria-live="polite"></section>
+    <p class="shop-empty" id="shop-empty" hidden>Nothing in this group yet. <a class="pb-link" data-link="catalog" href="#">See all products</a></p>
+
+    <section class="shop-help">
+      <div><h2 class="t-h2">Can't find the item you want?</h2><p class="t-muted">We can get almost any blank from the brands we carry. Tell us what you need and we'll price it.</p></div>
+      <div class="hero__cta"><a class="btn btn--lg" href="tel:+13057055486">Call (305) 705-5486</a><a class="btn btn--ghost btn--lg" href="mailto:Support@levimpressions.com">Email us</a></div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var D = window.LEV_DATA, q = new URLSearchParams(location.search);
+      var state = { cat: q.get("cat") || "", sub: q.get("sub") || "", sort: "default" };
+      var LEAD = {
+        "": "Every item here can be printed or embroidered with your design. Pick one to open it in the design studio.",
+        "Shirts": "Tees, long sleeves, polos and performance shirts for adults and kids.",
+        "Hoodies & Sweatshirts": "Pullover hoodies, zip-ups and crewnecks in fleece, for adults and kids.",
+        "Hats": "Caps with a stitched or printed front logo.",
+        "Bags": "Totes with two printable sides."
+      };
+      Promise.all([fetch(D.index).then(function (r) { return r.json(); }), fetch(D.pricing).then(function (r) { return r.json(); })]).then(function (d) {
+        var items = d[0].items, pricing = d[1], grid = document.getElementById("shop-grid");
+        var cats = [""].concat(items.map(function (i) { return i.category; }).filter(function (c, n, a) { return a.indexOf(c) === n; }));
+        function draw() {
+          var list = items.filter(function (i) { return (!state.cat || i.category === state.cat) && (!state.sub || i.sub === state.sub); });
+          if (state.sort === "low" || state.sort === "high") list = list.slice().sort(function (a, b) { return (LevCards.from(a, pricing) - LevCards.from(b, pricing)) * (state.sort === "low" ? 1 : -1); });
+          if (state.sort === "name") list = list.slice().sort(function (a, b) { return a.title.localeCompare(b.title); });
+          grid.innerHTML = "";
+          list.forEach(function (item, n) { grid.appendChild(LevCards.card(item, pricing, D.url, { reveal: true, i: Math.min(n, 11) })); });
+          window.LevSite.reveal();
+          document.getElementById("shop-count").textContent = list.length;
+          document.getElementById("shop-empty").hidden = list.length > 0;
+          var title = state.sub || state.cat || "All products";
+          document.getElementById("shop-title").textContent = title; document.getElementById("crumb").textContent = title;
+          document.getElementById("shop-lead").textContent = LEAD[state.cat] || LEAD[""];
+          document.title = title + " · Lev Impressions";
+          var catBox = document.getElementById("shop-cats"); catBox.innerHTML = "";
+          cats.forEach(function (c) {
+            var n = items.filter(function (i) { return !c || i.category === c; }).length;
+            var b = document.createElement("button"); b.className = "chip" + (state.cat === c ? " is-on" : ""); b.setAttribute("role", "tab");
+            b.innerHTML = (c || "All") + ' <span class="t-num">' + n + "</span>";
+            b.addEventListener("click", function () { if (c) { location.href = D.url.catalog(c); return; } state.cat = ""; state.sub = ""; draw(); });
+            catBox.appendChild(b);
+          });
+          var subBox = document.getElementById("shop-subs"); subBox.innerHTML = "";
+          if (state.cat) {
+            var subs = items.filter(function (i) { return i.category === state.cat; }).map(function (i) { return i.sub; }).filter(function (c, n, a) { return c && a.indexOf(c) === n; });
+            if (subs.length > 1) [""].concat(subs).forEach(function (sname) {
+              var b = document.createElement("button"); b.className = "shop-sub" + (state.sub === sname ? " is-on" : ""); b.textContent = sname || "All " + state.cat.toLowerCase();
+              b.addEventListener("click", function () { state.sub = sname; push(); draw(); });
+              subBox.appendChild(b);
+            });
+          }
+        }
+        function push() { /* categories have their own pages now; nothing to record here */ }
+        if (state.cat) { location.replace(D.url.catalog(state.cat, state.sub)); return; }
+        document.getElementById("shop-sort").addEventListener("change", function (e) { state.sort = e.target.value; draw(); });
+        draw();
+      });
+    })();
+  </script>
+</body>
+</html>

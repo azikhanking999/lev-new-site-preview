@@ -1,0 +1,162 @@
+{
+  "sku": "BG424",
+  "handle": "bg424-cotton-canvas-tote",
+  "title": "Cotton Canvas Tote",
+  "brand": "Port Authority",
+  "category": "Bags",
+  "sub": "Tote Bags",
+  "kind": "bag",
+  "price": 10.23,
+  "min": 6,
+  "sizes": [
+    "One size"
+  ],
+  "upcharges": {},
+  "methods": [
+    "dtf",
+    "emb"
+  ],
+  "material": "100% Cotton",
+  "fit": "",
+  "tier": "Moderate",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Port Authority Cotton Canvas Tote: a 100% cotton bag we decorate in our Miami shop.",
+  "details": [
+    "100% Cotton",
+    "Sizes One size",
+    "Style BG424"
+  ],
+  "views": [
+    {
+      "key": "side1",
+      "label": "Side 1",
+      "image": "flat_straight",
+      "area": {
+        "x": 20.84,
+        "y": 40.92,
+        "w": 56.49,
+        "h": 37.66,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 2.56,
+        "y": 0.0,
+        "w": 93.21,
+        "h": 93.82
+      }
+    },
+    {
+      "key": "side2",
+      "label": "Side 2",
+      "image": "flat_straight",
+      "area": {
+        "x": 20.84,
+        "y": 40.92,
+        "w": 56.49,
+        "h": 37.66,
+        "widthIn": 10,
+        "heightIn": 10
+      },
+      "crop": {
+        "x": 2.56,
+        "y": 0.0,
+        "w": 93.21,
+        "h": 93.82
+      }
+    }
+  ],
+  "cardImage": "flat_straight",
+  "cardCrop": {
+    "x": 11.58,
+    "y": 7.39,
+    "w": 75.17,
+    "h": 77.17
+  },
+  "colours": [
+    {
+      "code": "DeepBlack",
+      "name": "Deep Black",
+      "hex": "#101010",
+      "dark": true,
+      "swatch": "img/DeepBlack-swatch.gif",
+      "images": {
+        "flat_straight": "img/DeepBlack-flat_straight.jpg",
+        "flat_left": "img/DeepBlack-flat_left.jpg",
+        "flat_right": "img/DeepBlack-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "DeepRed",
+      "name": "Deep Red",
+      "hex": "#9b1633",
+      "dark": true,
+      "swatch": "img/DeepRed-swatch.gif",
+      "images": {
+        "flat_straight": "img/DeepRed-flat_straight.jpg",
+        "flat_left": "img/DeepRed-flat_left.jpg",
+        "flat_right": "img/DeepRed-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "Natural",
+      "name": "Natural",
+      "hex": "#e9deca",
+      "dark": false,
+      "swatch": "img/Natural-swatch.gif",
+      "images": {
+        "flat_straight": "img/Natural-flat_straight.jpg",
+        "flat_left": "img/Natural-flat_left.jpg",
+        "flat_right": "img/Natural-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "RiverBlNv",
+      "name": "River Blue Navy",
+      "hex": "#212e48",
+      "dark": true,
+      "swatch": "img/RiverBlNv-swatch.gif",
+      "images": {
+        "flat_straight": "img/RiverBlNv-flat_straight.jpg",
+        "flat_left": "img/RiverBlNv-flat_left.jpg",
+        "flat_right": "img/RiverBlNv-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "StormGrey",
+      "name": "Storm Grey",
+      "hex": "#68696e",
+      "dark": true,
+      "swatch": "img/StormGrey-swatch.gif",
+      "images": {
+        "flat_straight": "img/StormGrey-flat_straight.jpg",
+        "flat_left": "img/StormGrey-flat_left.jpg",
+        "flat_right": "img/StormGrey-flat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "TrueRoyal",
+      "name": "True Royal",
+      "hex": "#3b53aa",
+      "dark": true,
+      "swatch": "img/TrueRoyal-swatch.gif",
+      "images": {
+        "flat_straight": "img/TrueRoyal-flat_straight.jpg",
+        "flat_left": "img/TrueRoyal-flat_left.jpg",
+        "flat_right": "img/TrueRoyal-flat_right.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 6,
+  "base": "../catalog/BG424/"
+}

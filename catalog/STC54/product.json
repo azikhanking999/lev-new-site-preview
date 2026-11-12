@@ -1,0 +1,151 @@
+{
+  "sku": "STC54",
+  "handle": "stc54-sport-tek\u00ae-yp-classics\u00ae-retro-trucker-5-panel-cap",
+  "title": "Retro Trucker 5-Panel Cap",
+  "brand": "Sport-Tek",
+  "category": "Hats",
+  "sub": "Trucker Hats",
+  "kind": "cap",
+  "price": 15.06,
+  "min": 6,
+  "sizes": [
+    "One size"
+  ],
+  "upcharges": {},
+  "methods": [
+    "emb",
+    "dtf"
+  ],
+  "material": "Cotton/Poly front, mesh back",
+  "fit": "Unisex",
+  "tier": "Budget",
+  "rating": {
+    "value": 5.0,
+    "count": 94,
+    "source": "Google reviews for Lev Impressions"
+  },
+  "description": "Sport-Tek Retro Trucker 5-Panel Cap: a cotton/poly front, mesh back cap we decorate in our Miami shop.",
+  "details": [
+    "Cotton/Poly front, mesh back",
+    "Unisex fit",
+    "Sizes One size",
+    "Style STC54"
+  ],
+  "views": [
+    {
+      "key": "front",
+      "label": "Front",
+      "image": "hat_straight",
+      "area": {
+        "x": 31.28,
+        "y": 20.6,
+        "w": 35.1,
+        "h": 13.16,
+        "widthIn": 4,
+        "heightIn": 2.25
+      },
+      "crop": {
+        "x": 6.0,
+        "y": 1.79,
+        "w": 85.25,
+        "h": 55.52
+      },
+      "maxTier": "s"
+    }
+  ],
+  "cardImage": "hat_left",
+  "cardCrop": {
+    "x": 8.33,
+    "y": 7.22,
+    "w": 81.17,
+    "h": 42.67
+  },
+  "colours": [
+    {
+      "code": "BlkBlk",
+      "name": "Black / Black",
+      "hex": "#222222",
+      "dark": true,
+      "swatch": "img/BlkBlk-swatch.gif",
+      "images": {
+        "hat_left": "img/BlkBlk-hat_left.jpg",
+        "hat_straight": "img/BlkBlk-hat_straight.jpg",
+        "hat_back": "img/BlkBlk-hat_back.jpg",
+        "hat_right": "img/BlkBlk-hat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "BlkWhite",
+      "name": "Black / White",
+      "hex": "#818181",
+      "dark": false,
+      "swatch": "img/BlkWhite-swatch.gif",
+      "images": {
+        "hat_left": "img/BlkWhite-hat_left.jpg",
+        "hat_straight": "img/BlkWhite-hat_straight.jpg",
+        "hat_back": "img/BlkWhite-hat_back.jpg",
+        "hat_right": "img/BlkWhite-hat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "IrGryIrGy",
+      "name": "Iron Grey / Iron Grey",
+      "hex": "#343843",
+      "dark": true,
+      "swatch": "img/IrGryIrGy-swatch.gif",
+      "images": {
+        "hat_left": "img/IrGryIrGy-hat_left.jpg",
+        "hat_straight": "img/IrGryIrGy-hat_straight.jpg",
+        "hat_back": "img/IrGryIrGy-hat_back.jpg",
+        "hat_right": "img/IrGryIrGy-hat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "SilverWht",
+      "name": "Silver / White",
+      "hex": "#d2d3d0",
+      "dark": false,
+      "swatch": "img/SilverWht-swatch.gif",
+      "images": {
+        "hat_left": "img/SilverWht-hat_left.jpg",
+        "hat_straight": "img/SilverWht-hat_straight.jpg",
+        "hat_back": "img/SilverWht-hat_back.jpg",
+        "hat_right": "img/SilverWht-hat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "TrNvWhite",
+      "name": "True Navy / White",
+      "hex": "#848791",
+      "dark": false,
+      "swatch": "img/TrNvWhite-swatch.gif",
+      "images": {
+        "hat_left": "img/TrNvWhite-hat_left.jpg",
+        "hat_straight": "img/TrNvWhite-hat_straight.jpg",
+        "hat_back": "img/TrNvWhite-hat_back.jpg",
+        "hat_right": "img/TrNvWhite-hat_right.jpg"
+      },
+      "designable": true
+    },
+    {
+      "code": "TRyWhite",
+      "name": "True Royal / White",
+      "hex": "#8498bc",
+      "dark": false,
+      "swatch": "img/TRyWhite-swatch.gif",
+      "images": {
+        "hat_left": "img/TRyWhite-hat_left.jpg",
+        "hat_straight": "img/TRyWhite-hat_straight.jpg",
+        "hat_back": "img/TRyWhite-hat_back.jpg",
+        "hat_right": "img/TRyWhite-hat_right.jpg"
+      },
+      "designable": true
+    }
+  ],
+  "coloursOnSanmar": 6,
+  "base": "../catalog/STC54/"
+}
