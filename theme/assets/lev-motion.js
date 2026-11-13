@@ -64,9 +64,16 @@
   function setup() {
     // headlines (the banner's own h1 has a live swapping word, so it is handled apart)
     all("main h2.t-h1, main h2.t-display, main .section__head h2, main .rowhead h2").forEach(function (h) {
-      splitWords(h);
-      var holder = h.closest(".reveal"); if (holder) { holder.classList.add("mo-hold"); }
-      seen.observe(h);
+      if (h._mo) return; h._mo = true;
+      var go = function () {
+        splitWords(h);
+        var holder = h.closest(".reveal"); if (holder) { holder.classList.add("mo-hold"); }
+        seen.observe(h);
+      };
+      if (h.textContent.trim()) { go(); return; }
+      // a headline the page fills in a moment later (category pages): wait for its words
+      var wait = new MutationObserver(function () { if (h.textContent.trim()) { wait.disconnect(); go(); } });
+      wait.observe(h, { childList: true, characterData: true, subtree: true });
     });
     // images that wipe in
     // (a fully clipped element never counts as "in view", so its parent is watched for it)
@@ -214,7 +221,7 @@
   var floaters = [];
   function shapes() {
     all("main > section").forEach(function (sec, i) {
-      if (i < 1 || sec.classList.contains("hero") || sec.classList.contains("brands")) return;
+      if (i < 1 || sec.classList.contains("hero") || sec.classList.contains("cat-hero") || sec.classList.contains("cat-subs") || sec.classList.contains("brands") || sec.classList.contains("pdp")) return;
       if (getComputedStyle(sec).position === "static") sec.style.position = "relative";
       for (var k = 0; k < 2; k++) {
         var n = i * 2 + k, colour = COLOURS[n % COLOURS.length];

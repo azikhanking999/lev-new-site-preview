@@ -120,7 +120,7 @@ html.mo, html.mo body { overflow-x: clip; }
 /* shapes floating in the margins */
 html.mo .mo-deco { position: absolute; z-index: 0; height: auto; fill: var(--c); stroke: var(--c); opacity: 0.9; pointer-events: none; translate: 0 var(--py, 0px); animation: mo-spin var(--spin, 20s) linear infinite; }
 @keyframes mo-spin { to { rotate: 360deg; } }
-html.mo main > section:not(.hero) > :not(.mo-deco) { position: relative; z-index: 1; }
+html.mo main > section:not(.hero) > :not(.mo-deco):not(.shop-bar):not(.pdp__buy):not(.pg):not(.studio__copy):not(.why__head) { position: relative; z-index: 1; }
 
 /* the turning badge */
 html.mo .mo-badge { position: absolute; left: 47%; bottom: 14px; z-index: 8; width: clamp(96px, 9vw, 132px); aspect-ratio: 1; rotate: -8deg; filter: drop-shadow(0 5px 0 var(--ink, #0e0e10)); animation: mo-badge-in 900ms cubic-bezier(0.3, 1.4, 0.5, 1) 1100ms both; transition: scale 300ms var(--ease-bounce); }
@@ -162,3 +162,20 @@ html.mo .closer h2 { scale: var(--grow, 1); transform-origin: 50% 60%; transitio
 }
 /* the floating shapes live in the page margins, so they only show when there is a margin */
 
+
+/* ---------- other pages (category, all products, listing) ---------- */
+/* a category banner's words arrive in order, like the home banner's */
+html.mo .cat-hero__copy > * { animation: mo-rise 800ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+html.mo .cat-hero__copy > :nth-child(1) { animation-delay: 60ms; }
+html.mo .cat-hero__copy > :nth-child(2) { animation-delay: 140ms; }
+html.mo .cat-hero__copy > :nth-child(3) { animation-delay: 240ms; }
+html.mo .cat-hero__copy > :nth-child(4) { animation-delay: 340ms; }
+html.mo .cat-hero__copy > :nth-child(5) { animation-delay: 440ms; }
+/* sub-category tiles and chips lift under the pointer */
+html.mo .cat-sub, html.mo .chip, html.mo .shop-sub { transition: transform 260ms var(--ease-out), border-color 150ms, box-shadow 200ms, background 150ms, color 150ms; }
+html.mo .chip:hover, html.mo .shop-sub:hover { transform: translateY(-2px); }
+/* listing page: the main picture eases in when the colour changes, thumbnails lift */
+html.mo .pg img { transition: transform 500ms var(--ease-out), opacity 300ms; }
+html.mo .pg button:hover img, html.mo .pg__thumb:hover { transform: translateY(-2px); }
+html.mo .swatch { transition: transform 220ms var(--ease-bounce), box-shadow 150ms; }
+html.mo .swatch:hover { transform: scale(1.14); }
