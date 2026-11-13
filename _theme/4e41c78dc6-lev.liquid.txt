@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ page_title }}{% unless page_title contains shop.name %} · {{ shop.name }}{% endunless %}</title>
+  {%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  {%- if settings.favicon != blank -%}<link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">{%- endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400..700&display=swap">
+  {{ 'lev-base.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+  {%- assign lev_assets = 'lev-base.css' | asset_url | split: 'lev-base.css' | first -%}
+  <script>
+    /* Where the pages find their data and each other. The prototype has the same object in data.js. */
+    window.LEV_DATA = (function () {
+      var base = {{ lev_assets | json }}, files = {"index":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-cd440c18-lev-index.json?v=1794586512","pricing":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-79d94a84-lev-pricing.json?v=1794586085","gallery":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-e90772d2-lev-gallery.json?v=1794586512","products":{"3000":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-a27221c0-lev-product-3000.json?v=1794586085","437M":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-e6931986-lev-product-437m.json?v=1794586085","64000":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-2989a269-lev-product-64000.json?v=1794586085","8800":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-c9719973-lev-product-8800.json?v=1794586094","B050":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-74ac2ef0-lev-product-b050.json?v=1794586094","B0750":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-320cb406-lev-product-b0750.json?v=1794586094","BG1500":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-c13086b9-lev-product-bg1500.json?v=1794586094","BG420":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-8afc6219-lev-product-bg420.json?v=1794586094","BG424":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-5fced0b9-lev-product-bg424.json?v=1794586512","BG427":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-e1331e46-lev-product-bg427.json?v=1794586512","CAR54I":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-eb583b3e-lev-product-car54i.json?v=1794586512","CAR54T":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-9f026e27-lev-product-car54t.json?v=1794586512","CAR78IZH":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-448a1c6e-lev-product-car78izh.json?v=1794586520","CAR78TH":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-cad72129-lev-product-car78th.json?v=1794586520","CAR78TZH":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-eab57b8d-lev-product-car78tzh.json?v=1794586520","K110":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-41ffb1ee-lev-product-k110.json?v=1794586094","LK110":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-1f588c54-lev-product-lk110.json?v=1794586102","LOG138":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-e640b69d-lev-product-log138.json?v=1794586102","LPC54":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-884cbeaf-lev-product-lpc54.json?v=1794586103","LPC54LS":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-21b4fc42-lev-product-lpc54ls.json?v=1794586102","OG138":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-4611d2ca-lev-product-og138.json?v=1794586102","PC380LS":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-f05330a1-lev-product-pc380ls.json?v=1794586102","PC54":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-3285e71d-lev-product-pc54.json?v=1794586111","PC54LS":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-10b11bef-lev-product-pc54ls.json?v=1794586111","PC54Y":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-dec02d40-lev-product-pc54y.json?v=1794586111","PC78":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-3e2002d6-lev-product-pc78.json?v=1794586111","PC78H":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-17eef544-lev-product-pc78h.json?v=1794586520","PC78ZH":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-9fec42a3-lev-product-pc78zh.json?v=1794586520","PC90Y":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-ac83d6ba-lev-product-pc90y.json?v=1794586520","PC90YH":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-87ca27e5-lev-product-pc90yh.json?v=1794586527","PC90YZH":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-f95300e8-lev-product-pc90yzh.json?v=1794586527","STC54":"https://cdn.shopify.com/s/files/1/0656/9954/5341/files/levdata-d3e068c6-lev-product-stc54.json?v=1794586111"}}, handles = {"3000":"3000-gildan-light-cotton-tee","437M":"437m-jerzees-dri-power-sport-shirt","64000":"64000-gildan-softstyle-t-shirt","8800":"8800-gildan-dryblend-6-ounce-jersey-knit-sport-shirt","B050":"b050-ideal-twill-convention-tote","B0750":"b0750-essential-tote","BG1500":"bg1500-core-cotton-tote","BG420":"bg420-eco-blend-canvas-tote","BG424":"bg424-cotton-canvas-tote","BG427":"bg427-cotton-canvas-jumbo-tote","CAR54I":"infant-core-cotton-tee","CAR54T":"port-co\u2122-toddler-core-cotton-tee","CAR78IZH":"infant-core-fleece-full-zip-hooded-sweatshirt","CAR78TH":"toddler-core-fleece-pullover-hooded-sweatshirt","CAR78TZH":"toddler-core-fleece-full-zip-hooded-sweatshirt","K110":"437m-jerzees-dri-power-sport-shirt-copy","LK110":"lk110-port-authority-womens-dry-zone-uv-micro-mesh-polo","LOG138":"log138-ogio-womens-limit-polo","LPC54":"womens-core-cotton-tee","LPC54LS":"lpc54ls-port-co-womens-long-sleeve-core-cotton-tee","OG138":"og138-ogio-limit-polo","PC380LS":"pc380ls-port-co\u2122-long-sleeve-performance-tee","PC54":"port-company-pc54-core-cotton-tee","PC54LS":"pc54ls-port-co-long-sleeve-core-cotton-tee","PC54Y":"pc54y-youth-core-cotton-tee","PC78":"core-fleece-crewneck-sweatshirt","PC78H":"core-fleece-pullover-hooded-sweatshirt","PC78ZH":"core-fleece-full-zip-hooded-sweatshirt","PC90Y":"pc90y-youth-core-fleece-crewneck-sweatshirt","PC90YH":"pc90yh-youth-core-fleece-pullover-hooded-sweatshirt","PC90YZH":"youth-core-fleece-full-zip-hooded-sweatshirt","STC54":"stc54-sport-tek\u00ae-yp-classics\u00ae-retro-trucker-5-panel-cap"}, skuOf = {};
+      Object.keys(handles).forEach(function (s) { skuOf[handles[s]] = s; });
+      function enc(s) { return encodeURIComponent(s); }
+      function item(sku, view, colour) { return "/products/" + (handles[sku] || "") + "?view=" + view + "&sku=" + enc(sku) + (colour ? "&color=" + enc(colour) : ""); }
+      return {
+        index: files.index, pricing: files.pricing, gallery: files.gallery,
+        clipart: base + "lev-clipart.json", logo: base + "lev-logo.png", mediaBase: "",
+        product: function (sku) { return files.products[sku] || ""; },
+        skuOf: skuOf,
+        url: {
+          home: {{ routes.root_url | json }},
+          catalog: function (cat, sub) { return cat ? "/collections/all?view=lev-category&cat=" + enc(cat) + (sub ? "&sub=" + enc(sub) : "") : "/collections/all?view=lev-catalog"; },
+          product: function (sku, colour) { return item(sku, "lev", colour); },
+          studio: function (sku, colour) { return item(sku, "lev-studio", colour); }
+        }
+      };
+    })();
+  </script>
+</head>
+<body class="lev-body template-{{ template.name }}{% if template.suffix %} template-{{ template.suffix }}{% endif %}">
+  <div id="MainContent">{{ content_for_layout }}</div>
+</body>
+</html>
