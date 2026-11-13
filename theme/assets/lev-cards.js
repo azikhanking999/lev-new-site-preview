@@ -37,7 +37,13 @@
     } else link.appendChild(hover);
     var tags = el("div", "pcard__tags");
     if (item.methods.indexOf("emb") >= 0) tags.appendChild(el("span", "tag", "Print or embroidery"));
-    if (opts.badge) tags.appendChild(el("span", "tag tag--accent", esc(opts.badge)));
+    // Hot sellers get a small moving flame (no words; "Hot selling" is its hidden description).
+    // Which items are hot is set in catalog/_items.json ("mark": "hot").
+    var D = window.LEV_DATA || {};
+    if (item.mark === "hot" && D.fire) {
+      var hot = el("span", "pcard__hot", '<img alt="Hot selling" title="Hot selling" width="34" height="34">'); hot.firstChild.src = D.fire;
+      tags.insertBefore(hot, tags.firstChild);
+    } else if (opts.badge) tags.appendChild(el("span", "tag tag--accent", esc(opts.badge)));
     link.appendChild(tags);
     var cta = el("a", "btn btn--accent btn--sm btn--block pcard__cta", "<span>Design it</span>" + ARROW);
     cta.href = urls.studio(item.sku, colour.code);

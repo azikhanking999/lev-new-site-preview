@@ -20,6 +20,8 @@
   <script src="../theme/assets/lev-cards.js"></script>
   <script src="../theme/assets/lev-mock.js"></script>
   <script src="../theme/assets/lev-reviews.js"></script>
+  <link rel="stylesheet" href="../theme/assets/lev-motion.css">
+  <script src="../theme/assets/lev-motion.js"></script>
 </head>
 <body>
   <main>
@@ -277,7 +279,7 @@
         ["Shirts", "Tees, long sleeves, polos, performance, kids", "--bg:var(--accent)", "M247.59,61.22,195.83,33A8,8,0,0,0,192,32H160a8,8,0,0,0-8,8,24,24,0,0,1-48,0,8,8,0,0,0-8-8H64a8,8,0,0,0-3.84,1L8.41,61.22A15.76,15.76,0,0,0,1.82,82.48l19.27,36.81A16.37,16.37,0,0,0,35.67,128H56v80a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V128h20.34a16.37,16.37,0,0,0,14.58-8.71l19.27-36.81A15.76,15.76,0,0,0,247.59,61.22Z"],
         ["Hoodies & Sweatshirts", "Pullovers, crewnecks and zip-ups", "--bg:var(--ink);--fg:#fff", "M237.31,120.53,183,39.12A16,16,0,0,0,169.73,32H86.27A16,16,0,0,0,73,39.12L18.69,120.53a16,16,0,0,0-2.13,13.09L38,212.21A16,16,0,0,0,53.43,224H80a16,16,0,0,0,16-16V192h64v16a16,16,0,0,0,16,16h26.57A16,16,0,0,0,218,212.21l21.44-78.59A16,16,0,0,0,237.31,120.53Z"],
         ["Hats", "Caps with a stitched front logo", "--bg:var(--sun)", "M128,24A104.12,104.12,0,0,0,24,128v56a24,24,0,0,0,24,24,24.11,24.11,0,0,0,14.18-4.64C74.33,194.53,95.6,184,128,184s53.67,10.52,65.81,19.35A24,24,0,0,0,232,184V128A104.12,104.12,0,0,0,128,24Z"],
-        ["Bags", "Totes with two printable sides", "--bg:var(--card)", "M236,69.4A16.13,16.13,0,0,0,223.92,64H176a48,48,0,0,0-96,0H32.08a16.13,16.13,0,0,0-12,5.4,16,16,0,0,0-3.92,12.48l14.26,120a16,16,0,0,0,16,14.12H209.67a16,16,0,0,0,16-14.12l14.26-120A16,16,0,0,0,236,69.4ZM128,32a32,32,0,0,1,32,32H96A32,32,0,0,1,128,32Z"]
+        ["Bags", "Totes with two printable sides", "--bg:var(--violet);--fg:#fff", "M236,69.4A16.13,16.13,0,0,0,223.92,64H176a48,48,0,0,0-96,0H32.08a16.13,16.13,0,0,0-12,5.4,16,16,0,0,0-3.92,12.48l14.26,120a16,16,0,0,0,16,14.12H209.67a16,16,0,0,0,16-14.12l14.26-120A16,16,0,0,0,236,69.4ZM128,32a32,32,0,0,1,32,32H96A32,32,0,0,1,128,32Z"]
       ];
 
       /* ---- animated stats: count up once, when seen ---- */
@@ -292,6 +294,8 @@
       }
 
       /* ---- hero: the headline word and the three cards change together ---- */
+      // colour, hover shade, and the text colour that reads on it
+      var HERO_TINT = { shirts: ["#ff5a1f", "#ff7038", "#0e0e10"], hoodies: ["#7a3df5", "#8f5bff", "#ffffff"], hats: ["#ff2d92", "#ff55a8", "#0e0e10"], bags: ["#0fb5a6", "#2ccabb", "#0e0e10"] };
       var HERO = [
         { word: "shirts", cards: [["PC54", "Gold", "reunion"], ["PC54", "White", "script"], ["PC54", "Navy", "varsity"]] },
         { word: "hoodies", cards: [["PC78H", ["Red", "Royal", "Gold"], "team"], ["PC78", ["Athletic Heather", "Ash", "White"], "swim"], ["PC78H", ["Jet Black", "Navy", "Charcoal"], "climbing"]] },
@@ -317,6 +321,9 @@
         var dots = $("hero-dots");
         function show(n, instant) {
           var set = sets[n]; if (!set) return;
+          // the banner takes the colour of the item it is showing (Nasir, 2026-11-14)
+          var tint = HERO_TINT[set.word] || HERO_TINT.shirts, hero = document.querySelector(".hero");
+          hero.style.setProperty("--accent", tint[0]); hero.style.setProperty("--accent-hover", tint[1]); hero.style.setProperty("--accent-ink", tint[2]);
           words.forEach(function (el) { var on = el.textContent === set.word; if (on) { el.classList.remove("is-out"); el.classList.add("is-on"); } else if (el.classList.contains("is-on")) { el.classList.remove("is-on"); el.classList.add("is-out"); setTimeout(function () { el.classList.remove("is-out"); }, 600); } });
           set.cards.forEach(function (c, i) {
             var slot = slots[i], made = LevMock.inner(bySku[c[0]], { colour: c[1], design: c[2], onDark: c[3] });

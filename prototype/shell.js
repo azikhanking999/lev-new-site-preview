@@ -35,9 +35,9 @@ window.LevSiteManual = true;
   var header =
     '<div class="lev-bar" aria-hidden="true"><div class="lev-bar__track">' + tick + tick + "</div></div>" +
     '<header class="lev-header"><div class="wrap lev-header__in">' +
-      '<a class="lev-logo" data-link="home" href="#" aria-label="Lev Impressions home"><img src="../theme/assets/lev-logo.png" alt="Lev Impressions" width="68" height="44"></a>' +
+      '<a class="lev-logo" data-link="home" href="#" aria-label="Lev Impressions home"><img data-logo alt="Lev Impressions" width="68" height="44"></a>' +
       '<ul class="lev-nav">' + MENU.map(function (m) { return '<li><button data-mega="' + m.key + '" data-nav-cat="' + m.cat + '" aria-expanded="false">' + m.label + chev + "</button></li>"; }).join("") +
-        '<li><a data-link="catalog" href="#">All products</a></li><li><a href="index.html#how">How it works</a></li><li><a href="index.html#reviews">Reviews</a></li></ul>' +
+        '<li><a data-link="catalog" href="#">All products</a></li><li><a data-link="home#how" href="#">How it works</a></li><li><a data-link="home#reviews" href="#">Reviews</a></li></ul>' +
       '<div class="lev-header__right">' +
         '<a class="lev-phone" href="tel:+13057055486">' + ico.phone + "<span>(305) 705-5486</span></a>" +
         '<a class="lev-iconlink" href="#" aria-label="Search">' + ico.search + "</a>" +
@@ -51,16 +51,16 @@ window.LevSiteManual = true;
           '<a class="lev-feature lev-feature--ink" data-cat-studio="' + m.cat + '" href="#"><strong>Design it<br>yourself.</strong><span>Open the studio ' + ico.arrow + "</span></a></div></div>";
       }).join("") + "</div></div></header>" +
     '<div class="lev-scrim"></div>' +
-    '<div class="lev-drawer" aria-label="Menu"><div class="lev-drawer__top"><a class="lev-logo" data-link="home" href="#"><img src="../theme/assets/lev-logo.png" alt="Lev Impressions" width="60" height="38"></a><button class="lev-iconlink" data-drawer-close aria-label="Close menu">' + ico.close + "</button></div>" +
+    '<div class="lev-drawer" aria-label="Menu"><div class="lev-drawer__top"><a class="lev-logo" data-link="home" href="#"><img data-logo alt="Lev Impressions" width="60" height="38"></a><button class="lev-iconlink" data-drawer-close aria-label="Close menu">' + ico.close + "</button></div>" +
       '<div class="lev-drawer__body">' + MENU.map(function (m) { return "<details><summary>" + m.cat + chev + '</summary><div data-cat-drawer="' + m.cat + '"></div></details>'; }).join("") +
-      '<div class="lev-drawer__plain"><a data-link="catalog" href="#">All products</a><a href="index.html#how">How it works</a><a href="index.html#reviews">Reviews</a></div></div>' +
+      '<div class="lev-drawer__plain"><a data-link="catalog" href="#">All products</a><a data-link="home#how" href="#">How it works</a><a data-link="home#reviews" href="#">Reviews</a></div></div>' +
       '<div class="lev-drawer__foot"><a class="btn btn--accent btn--block btn--lg" data-link="studio" href="#">Start designing</a><a class="btn btn--ghost btn--block" href="tel:+13057055486">Call (305) 705-5486</a></div></div>';
 
   var footer =
     '<footer class="lev-footer"><div class="wrap lev-footer__top">' +
       '<div class="stack" style="--gap:18px"><p class="lev-footer__big">Made with heart<br>in Miami.</p><div class="heart-rule" style="width:120px"></div><p style="color:rgba(255,255,255,.7);max-width:34ch">Custom apparel, printed and embroidered by a family-owned shop.</p></div>' +
       "<div><h4>Shop</h4><ul>" + MENU.map(function (m) { return '<li><a data-link="catalog:' + m.cat + '" href="#">' + m.cat + "</a></li>"; }).join("") + '<li><a data-link="catalog" href="#">All products</a></li></ul></div>' +
-      '<div><h4>Help</h4><ul><li><a href="index.html#how">How it works</a></li><li><a href="index.html#faq">Questions</a></li><li><a href="index.html#reviews">Reviews</a></li><li><a data-link="studio" href="#">Design studio</a></li></ul></div>' +
+      '<div><h4>Help</h4><ul><li><a data-link="home#how" href="#">How it works</a></li><li><a data-link="home#faq" href="#">Questions</a></li><li><a data-link="home#reviews" href="#">Reviews</a></li><li><a data-link="studio" href="#">Design studio</a></li></ul></div>' +
       '<div><h4>Contact</h4><ul><li><a href="tel:+13057055486">(305) 705-5486</a></li><li><a href="mailto:Support@levimpressions.com">Support@levimpressions.com</a></li><li>20815 NE 16th Ave, Unit B18<br>Miami, FL 33179</li></ul></div>' +
     '</div><div class="wrap lev-footer__base"><span>© Lev Impressions</span><span>Prototype build.</span></div></footer>';
 
@@ -111,9 +111,11 @@ window.LevSiteManual = true;
   /* Turns data-link="catalog:Shirts|Polo Shirts", "catalog", "studio", "studio:PC54", "product:PC54", "home" into real addresses. */
   function resolveLinks(root) {
     var D = window.LEV_DATA; if (!D) return;
+    root.querySelectorAll("img[data-logo]").forEach(function (im) { if (!im.getAttribute("src")) im.src = D.logo; });
     root.querySelectorAll("[data-link]").forEach(function (a) {
       var parts = a.getAttribute("data-link").split(":"), kind = parts[0], arg = parts.slice(1).join(":");
-      if (kind === "home") a.href = D.url.home;
+      if (kind.indexOf("home#") === 0) a.href = D.url.home + kind.slice(4);
+      else if (kind === "home") a.href = D.url.home;
       else if (kind === "catalog") { var cs = arg.split("|"); a.href = D.url.catalog(cs[0], cs[1]); }
       else if (kind === "studio") a.href = D.url.studio(arg || "PC54");
       else if (kind === "product") a.href = D.url.product(arg || "PC54");

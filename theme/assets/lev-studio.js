@@ -150,10 +150,13 @@
     function colourCfg(code) { code = code || st.colour; for (var i = 0; i < product.colours.length; i++) if (product.colours[i].code === code) return product.colours[i]; }
     function items(key) { return st.items[key || st.view]; }
     function selected() { var l = items(); for (var i = 0; i < l.length; i++) if (l[i].id === st.sel) return l[i]; return null; }
-    function geom(v) {
-      var crop = v.crop || { x: 0, y: 0, w: 100, h: 100 };
+    function geom(v, colourCode) {
+      // Sleeves are shown on a model, who stands a little differently in each
+      // colour's photo, so those views carry their own box per colour.
+      var own = v.byColour && v.byColour[colourCode || st.colour];
+      var crop = (own && own.crop) || v.crop || { x: 0, y: 0, w: 100, h: 100 };
       var vb = { x: crop.x * IMG[0] / 100, y: crop.y * IMG[1] / 100, w: crop.w * IMG[0] / 100, h: crop.h * IMG[1] / 100 };
-      var a = v.area, axPct = a.x;
+      var a = (own && own.area) || v.area, axPct = a.x;
       if (v.mirror) axPct = 2 * (crop.x + crop.w / 2) - (a.x + a.w);
       var ax = axPct * IMG[0] / 100, ay = a.y * IMG[1] / 100, aw = a.w * IMG[0] / 100, ah = a.h * IMG[1] / 100;
       var W = a.widthIn * U, H = a.heightIn * U;
@@ -759,7 +762,7 @@
       });
     }
     function staticView(key, colourCode, suffix) {
-      var v = viewCfg(key), g = geom(v), col = colourCfg(colourCode), vb = g.vb;
+      var v = viewCfg(key), g = geom(v, colourCode), col = colourCfg(colourCode), vb = g.vb;
       var svg = s("svg", { viewBox: vb.x + " " + vb.y + " " + vb.w + " " + vb.h, class: "ls-static", xmlns: NS });
       var cid = "c-" + key + "-" + (suffix || "");
       svg.appendChild(s("defs", {}, [s("clipPath", { id: cid }, [s("rect", { x: 0, y: 0, width: g.W, height: g.H })])]));

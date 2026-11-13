@@ -1,0 +1,164 @@
+/* Lev Impressions motion layer (see lev-motion.js). Every rule sits under
+   html.mo, which the script adds only when motion is welcome, so a page
+   without the script, or a visitor who asked for less motion, sees none of it. */
+
+/* pages fade out before the next one loads, and rise in when they open */
+html.mo main { animation: mo-page-in 520ms cubic-bezier(0.22, 1, 0.36, 1) both; transition: opacity 180ms ease, transform 180ms ease; }
+@keyframes mo-page-in { from { opacity: 0; transform: translateY(14px); } }
+html.mo.mo-leaving main { opacity: 0; transform: translateY(-8px); }
+
+/* how far down the page you are */
+.mo-progress { position: fixed; left: 0; top: 0; z-index: 200; width: 100%; height: 3px; background: var(--accent, #ff5a1f); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
+
+/* headline words rise from behind a mask, one after another */
+html.mo .mo-hold.reveal { opacity: 1; transform: none; filter: none; }
+html.mo .mo-hold.reveal > :not(h2):not(.mo-words) { opacity: 0; transform: translateY(10px); transition: opacity 500ms var(--ease-out) 120ms, transform 500ms var(--ease-out) 120ms; }
+html.mo .mo-hold.reveal.is-in > :not(h2):not(.mo-words) { opacity: 1; transform: none; }
+html.mo .mo-w { display: inline-block; overflow: hidden; vertical-align: bottom; padding: 0.06em 0.04em 0.26em; margin: -0.06em -0.04em -0.26em; }
+html.mo .mo-w > span, html.mo .mo-w > .mo-w__keep { display: inline-block; transform: translateY(108%) rotate(4deg); transform-origin: 0 100%; transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1); transition-delay: calc(var(--n, 0) * 55ms); }
+html.mo .mo-words.mo-on .mo-w > span, html.mo .mo-words.mo-on .mo-w > .mo-w__keep { transform: none; }
+
+/* big blocks open like a shutter */
+html.mo .mo-wipe { clip-path: inset(0 0 100% 0 round var(--r-lg, 20px)); transition: clip-path 900ms cubic-bezier(0.22, 1, 0.36, 1); }
+html.mo .mo-wipe.mo-on { clip-path: inset(0 0 0 0 round var(--r-lg, 20px)); }
+html.mo .mo-wipe.reveal { opacity: 1; transform: none; filter: none; }
+html.mo .mo-wipe.mo-on.mo-done { clip-path: none; }
+
+/* rows whose pieces arrive one after another */
+html.mo .mo-row > * { opacity: 0; transform: translateY(26px) scale(0.97); transition: opacity 600ms var(--ease-out), transform 700ms cubic-bezier(0.22, 1, 0.36, 1); transition-delay: calc(var(--mo-i, 0) * 70ms); }
+html.mo .mo-row.mo-on > * { opacity: 1; transform: none; }
+html.mo .mo-row.mo-on > *:hover { transition-delay: 0ms; }
+html.mo .mo-row > .reveal { filter: none; }
+
+/* cards tilt toward the mouse, with a soft light where it is */
+html.mo .pcard__img, html.mo .cat, html.mo .step, html.mo .who__mock, html.mo .feat__img { transform-style: preserve-3d; }
+html.mo .mo-tilt { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px) !important; transition: transform 120ms linear, box-shadow 250ms, border-color 150ms !important; }
+html.mo .pcard__img::after, html.mo .cat::after, html.mo .step::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(240px circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.34), transparent 60%); opacity: 0; transition: opacity 250ms; z-index: 3; }
+html.mo .mo-tilt::after { opacity: 1; }
+
+/* buttons */
+html.mo .mo-magnet { translate: var(--mx, 0px) var(--my, 0px); transition-property: translate, transform, background, box-shadow, color, border-color; transition-duration: 280ms; transition-timing-function: var(--ease-out); }
+html.mo .btn:active { transform: translateY(2px) scale(0.97); }
+html.mo .btn--accent { position: relative; overflow: hidden; }
+html.mo .btn--accent::before { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.45), transparent); transform: skewX(-18deg); transition: left 600ms var(--ease-out); pointer-events: none; }
+html.mo .btn--accent:hover::before { left: 120%; }
+
+/* text links underline with a swipe */
+html.mo .mo-link { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; transition: background-size 350ms var(--ease-out); text-decoration: none; }
+html.mo .mo-link:hover { background-size: 100% 1.5px; }
+
+/* numbers tick when they change */
+html.mo .mo-tick { display: inline-block; animation: mo-tick 380ms cubic-bezier(0.22, 1, 0.36, 1); }
+@keyframes mo-tick { from { transform: translateY(0.35em); opacity: 0; filter: blur(3px); } }
+
+/* things that drift a little as you scroll */
+html.mo .cat svg.glyph { translate: 0 var(--py, 0px); }
+
+/* ---------- the banner ---------- */
+html.mo .mo-hero { position: relative; isolation: isolate; }
+.mo-glow { position: absolute; inset: -12% -6% -18%; z-index: -1; pointer-events: none; overflow: visible; }
+.mo-glow i { position: absolute; display: block; border-radius: 50%; filter: blur(70px); opacity: 0.55; translate: var(--bx, 0px) var(--by, 0px); transition: translate 900ms cubic-bezier(0.22, 1, 0.36, 1); }
+.mo-glow i:nth-child(1) { right: 6%; top: 4%; width: 38%; aspect-ratio: 1; background: #ffc83d; animation: mo-drift-a 16s ease-in-out infinite; }
+.mo-glow i:nth-child(2) { right: 30%; bottom: 6%; width: 30%; aspect-ratio: 1; background: #ff5a1f; opacity: 0.32; animation: mo-drift-b 20s ease-in-out infinite; }
+.mo-glow i:nth-child(3) { right: -4%; bottom: 14%; width: 30%; aspect-ratio: 1; background: #5b3df5; opacity: 0.3; animation: mo-drift-c 24s ease-in-out infinite; }
+@keyframes mo-drift-a { 50% { transform: translate(-8%, 10%) scale(1.12); } }
+@keyframes mo-drift-b { 50% { transform: translate(12%, -8%) scale(0.9); } }
+@keyframes mo-drift-c { 50% { transform: translate(-10%, -12%) scale(1.15); } }
+
+/* the banner's words arrive in order when the page opens */
+html.mo .hero__copy > * { animation: mo-rise 800ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+html.mo .hero__copy > :nth-child(1) { animation-delay: 60ms; }
+html.mo .hero__copy > :nth-child(2) { animation-delay: 140ms; }
+html.mo .hero__copy > :nth-child(3) { animation-delay: 260ms; }
+html.mo .hero__copy > :nth-child(4) { animation-delay: 360ms; }
+html.mo .hero__copy > :nth-child(5) { animation-delay: 460ms; }
+@keyframes mo-rise { from { opacity: 0; transform: translateY(28px); filter: blur(6px); } }
+
+/* the changing word: letters rise one after another */
+html.mo .hero__swap span i { display: inline-block; font-style: normal; transform: translateY(70%); opacity: 0; transition: transform 560ms cubic-bezier(0.22, 1, 0.36, 1), opacity 300ms; transition-delay: calc(var(--n, 0) * 34ms + 90ms); }
+html.mo .hero__swap span.is-on i { transform: none; opacity: 1; }
+html.mo .hero__swap span.is-out i { transform: translateY(-60%); opacity: 0; transition-delay: calc(var(--n, 0) * 14ms); }
+
+/* the cards float, each at its own pace, and lean with the mouse */
+html.mo .hero__stage .mock { translate: var(--tx, 0px) var(--ty, 0px); }
+html.mo .hero__stage .mock:not(.is-arriving):not(.is-leaving) .mock__in { animation: mo-float 7s ease-in-out infinite; }
+html.mo .hero__stage .mock--b:not(.is-arriving):not(.is-leaving) .mock__in { animation-duration: 8.5s; animation-delay: -2s; }
+html.mo .hero__stage .mock--c:not(.is-arriving):not(.is-leaving) .mock__in { animation-duration: 6.2s; animation-delay: -4s; }
+@keyframes mo-float { 50% { transform: translateY(-1.6%); } }
+html.mo .hero__dots button { transition: transform 300ms var(--ease-bounce), background 200ms, color 200ms, border-color 200ms; }
+html.mo .hero__dots button:hover { transform: translateY(-2px); }
+
+/* ---------- menu ---------- */
+html.mo .lev-mega__pane.is-on .lev-mega__links > * { animation: mo-menu 420ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+html.mo .lev-mega__pane.is-on .lev-mega__links > :nth-child(2) { animation-delay: 30ms; }
+html.mo .lev-mega__pane.is-on .lev-mega__links > :nth-child(3) { animation-delay: 60ms; }
+html.mo .lev-mega__pane.is-on .lev-mega__links > :nth-child(4) { animation-delay: 90ms; }
+html.mo .lev-mega__pane.is-on .lev-mega__links > :nth-child(5) { animation-delay: 120ms; }
+html.mo .lev-mega__pane.is-on .lev-mega__links > :nth-child(6) { animation-delay: 150ms; }
+html.mo .lev-mega__pane.is-on .lev-mega__links > :nth-child(n + 7) { animation-delay: 180ms; }
+html.mo .lev-mega__pane.is-on .lev-feature { animation: mo-menu 520ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both; }
+html.mo .lev-mega__pane.is-on .lev-feature + .lev-feature { animation-delay: 190ms; }
+@keyframes mo-menu { from { opacity: 0; transform: translateY(12px); } }
+html.mo .lev-drawer.is-open .lev-drawer__body > * { animation: mo-menu 420ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+html.mo .lev-drawer.is-open .lev-drawer__body > :nth-child(2) { animation-delay: 50ms; }
+html.mo .lev-drawer.is-open .lev-drawer__body > :nth-child(3) { animation-delay: 100ms; }
+html.mo .lev-drawer.is-open .lev-drawer__body > :nth-child(4) { animation-delay: 150ms; }
+html.mo .lev-drawer.is-open .lev-drawer__body > :nth-child(5) { animation-delay: 200ms; }
+html.mo .lev-nav > li > a, html.mo .lev-nav > li > button { transition: transform 250ms var(--ease-out), color 150ms; }
+html.mo .lev-nav > li > a:hover, html.mo .lev-nav > li > button:hover { transform: translateY(-1px); }
+
+@media (max-width: 900px) {
+  .mo-glow i { filter: blur(50px); }
+  html.mo .mo-w > span, html.mo .mo-w > .mo-w__keep { transition-duration: 600ms; }
+}
+
+/* the banner's colour shapes reach past the page edge: do not let that add a sideways scroll */
+html.mo, html.mo body { overflow-x: clip; }
+
+/* ---------- more motion elements (added 2026-11-14) ---------- */
+
+/* shapes floating in the margins */
+html.mo .mo-deco { position: absolute; z-index: 0; height: auto; fill: var(--c); stroke: var(--c); opacity: 0.9; pointer-events: none; translate: 0 var(--py, 0px); animation: mo-spin var(--spin, 20s) linear infinite; }
+@keyframes mo-spin { to { rotate: 360deg; } }
+html.mo main > section:not(.hero) > :not(.mo-deco) { position: relative; z-index: 1; }
+
+/* the turning badge */
+html.mo .mo-badge { position: absolute; left: 47%; bottom: 14px; z-index: 8; width: clamp(96px, 9vw, 132px); aspect-ratio: 1; rotate: -8deg; filter: drop-shadow(0 5px 0 var(--ink, #0e0e10)); animation: mo-badge-in 900ms cubic-bezier(0.3, 1.4, 0.5, 1) 1100ms both; transition: scale 300ms var(--ease-bounce); }
+html.mo .mo-badge svg { display: block; width: 100%; height: 100%; overflow: visible; }
+html.mo .mo-badge__bg { fill: var(--sun, #ffc83d); stroke: var(--ink, #0e0e10); stroke-width: 3; }
+html.mo .mo-badge text { font-family: var(--font-display); font-weight: 800; font-size: 21px; letter-spacing: 0.04em; fill: var(--ink, #0e0e10); }
+html.mo .mo-badge__spin { transform-box: view-box; transform-origin: 100px 100px; rotate: var(--turn, 0deg); animation: mo-spin 22s linear infinite; }
+html.mo .mo-badge__heart { fill: var(--accent, #ff5a1f); stroke: var(--ink, #0e0e10); stroke-width: 3; stroke-linejoin: round; transform-box: fill-box; transform-origin: center; animation: mo-beat 1.6s ease-in-out infinite; }
+@keyframes mo-beat { 0%, 100% { scale: 1; } 14% { scale: 1.16; } 28% { scale: 1; } 42% { scale: 1.1; } }
+@keyframes mo-badge-in { from { opacity: 0; scale: 0.3; rotate: -90deg; } }
+
+/* sparkles around the banner cards */
+html.mo .mo-spark { position: absolute; z-index: 7; height: auto; fill: var(--c); stroke: var(--ink, #0e0e10); stroke-width: 5; stroke-linejoin: round; pointer-events: none; animation: mo-spark 1400ms cubic-bezier(0.3, 1.4, 0.5, 1) both; }
+@keyframes mo-spark { 0% { scale: 0; rotate: -60deg; opacity: 0; } 30% { scale: 1; opacity: 1; } 70% { scale: 0.9; opacity: 1; } 100% { scale: 0; rotate: 80deg; opacity: 0; } }
+
+/* the burst when a main button is clicked */
+.mo-bit { position: fixed; z-index: 310; width: 9px; height: 9px; margin: -4px 0 0 -4px; border-radius: 50%; border: 1.5px solid var(--ink, #0e0e10); pointer-events: none; animation: mo-bit 650ms cubic-bezier(0.2, 0.8, 0.3, 1) both; }
+@keyframes mo-bit { to { translate: var(--x) var(--y); scale: 0.2; opacity: 0; } }
+
+/* the brand names run as a strip */
+html.mo .mo-strip { flex: 1 1 0; min-width: 0; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+html.mo .mo-strip ul { flex-wrap: nowrap; width: max-content; gap: 0; animation: lev-marquee 32s linear infinite; }
+html.mo .mo-strip li { white-space: nowrap; padding-inline: clamp(14px, 2vw, 26px); opacity: 0.78; transform: none; }
+html.mo .mo-strip:hover ul { animation-play-state: paused; }
+
+/* step numbers fill with colour when their card arrives or is touched */
+html.mo .step::before { transition: color 500ms var(--ease-out), -webkit-text-stroke-color 500ms; }
+html.mo .step:hover::before, html.mo .step.mo-tilt::before { color: var(--accent, #ff5a1f); }
+
+/* stickers wobble when touched */
+html.mo .sticker { transition: rotate 300ms var(--ease-bounce), scale 300ms var(--ease-bounce); }
+html.mo .sticker:hover { rotate: 6deg; scale: 1.08; }
+
+/* the closing headline grows in as it comes up the screen */
+html.mo .closer h2 { scale: var(--grow, 1); transform-origin: 50% 60%; transition: scale 120ms linear; }
+
+@media (max-width: 900px) {
+  html.mo .mo-badge { display: none; }
+}
+/* the floating shapes live in the page margins, so they only show when there is a margin */
+

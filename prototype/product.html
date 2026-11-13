@@ -22,8 +22,8 @@
 <body class="has-pbar">
   <main class="wrap">
     <ol class="crumbs">
-      <li><a href="index.html">All products</a></li>
-      <li><a href="catalog.html" id="crumb-cat">Shirts</a></li>
+      <li><a data-link="catalog" href="#">All products</a></li>
+      <li><a href="#" id="crumb-cat">Shirts</a></li>
       <li id="crumb-sub">Short Sleeve T-Shirts</li>
     </ol>
 
@@ -81,15 +81,15 @@
 
   <div class="pbar">
     <div><div class="t-micro t-muted">from</div><strong class="t-num" id="pbar-price"></strong></div>
-    <a class="btn btn--accent" data-studio-link href="studio.html">Start designing</a>
+    <a class="btn btn--accent" data-studio-link href="#">Start designing</a>
   </div>
 
   <script>
     (async function () {
-      const q = new URLSearchParams(location.search), sku = q.get("sku") || "PC54";
+      const q = new URLSearchParams(location.search), D = window.LEV_DATA, sku = q.get("sku") || (window.LEV_PAGE && window.LEV_PAGE.sku) || "PC54";
       const [product, pricing] = await Promise.all([
-        fetch("../catalog/" + sku + "/product.json").then(r => r.json()),
-        fetch("../config/pricing.json").then(r => r.json())
+        fetch(D.product(sku)).then(r => r.json()),
+        fetch(D.pricing).then(r => r.json())
       ]);
       const P = window.LevPricing;
       document.getElementById("desc").textContent = product.description;
@@ -97,12 +97,12 @@
       document.getElementById("spec").innerHTML = [["Material", product.material], ["Fit", product.fit], ["Brand", product.brand], ["Style", product.sku]].map(s => "<div><span>" + s[0] + "</span><strong>" + s[1] + "</strong></div>").join("");
       document.getElementById("sizespec").innerHTML = product.sizes.map(z => "<div><span>" + (product.upcharges[z] ? "+" + P.money(product.upcharges[z]) : "standard price") + "</span><strong>" + z + "</strong></div>").join("");
       document.title = product.title + " · Lev Impressions";
-      document.getElementById("crumb-cat").textContent = product.category; document.getElementById("crumb-cat").href = "catalog.html?cat=" + encodeURIComponent(product.category);
+      document.getElementById("crumb-cat").textContent = product.category; document.getElementById("crumb-cat").href = D.url.catalog(product.category);
       document.getElementById("crumb-sub").textContent = product.sub || product.title;
       const firstView = product.views[0], firstTier = firstView.maxTier === "s" ? "s" : "m";
       document.getElementById("tierspec").innerHTML = product.methods.map(m => pricing.methods[m].tiers.map(t => "<div><span>" + pricing.methods[m].label + " · " + t.size.toLowerCase() + "</span><strong>" + t.label + " · +" + P.money(t.price) + "</strong></div>").join("")).join("");
       if (product.methods.indexOf("emb") >= 0) document.getElementById("decor-text").textContent = "This item can be printed in full colour (DTF) or embroidered. Print is priced by the size of the design; embroidery by the size of the stitched area. Pick either in the calculator above.";
-      const page = LevProduct.mount({ product, pricing, colour: q.get("color"), gallery: document.getElementById("gallery"), buy: document.getElementById("buy"), calc: document.getElementById("calc"), studioUrl: "studio.html" });
+      const page = LevProduct.mount({ product, pricing, colour: q.get("color"), gallery: document.getElementById("gallery"), buy: document.getElementById("buy"), calc: document.getElementById("calc"), studioUrl: D.url.studio(sku) });
       document.getElementById("pbar-price").textContent = P.money(P.quote(pricing, { blank: product.price, method: product.methods[0], qty: 50, locations: [{ key: firstView.key, tier: firstTier }] }).unit);
       fetch(window.LEV_DATA.gallery).then(r => r.json()).then(g => LevReviews.mount(document.getElementById("reviews-mount"), { gallery: g, base: window.LEV_DATA.mediaBase, variant: "product", rating: product.rating }));
       const tabs = document.getElementById("tabs");

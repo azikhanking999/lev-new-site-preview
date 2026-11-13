@@ -227,3 +227,16 @@ a.talk__way:hover .t-eyebrow { color: rgba(14, 14, 16, 0.7); }
   .stat:nth-child(3) { border-left: 0; }
   .stat:nth-child(n + 3) { border-top: 1.5px solid var(--ink); }
 }
+
+/* the closing block: white headline on the orange (Nasir, 2026-11-14) */
+.closer h2 { color: #fff; letter-spacing: -0.012em; word-spacing: 0.06em; line-height: 1; font-variation-settings: "wdth" 96; }   /* white on orange needs more air between letters than the black headlines */
+
+/* the banner's button and coloured word follow the item being shown: orange shirts, purple hoodies, hot pink hats, kelly green bags */
+.hero .btn--accent { --fg: var(--accent-ink, var(--ink)); transition-property: transform, background, box-shadow, color, translate; }
+.hero__swap { transition: color 400ms var(--ease-out); }
+
+/* the "No colour limits" sticker takes the banner colour, and its words are white on every colour (Nasir, 2026-11-14) */
+.hero__stage .sticker--3 { color: #fff; transition: background 300ms; }
+
+/* the changing word sits in a clipped box (so words can slide in and out); give the box a little room at the sides so the last letter is not cut */
+.hero__swap { padding-inline: 0.03em 0.09em; margin-inline: -0.03em -0.09em; }

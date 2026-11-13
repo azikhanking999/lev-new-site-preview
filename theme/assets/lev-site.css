@@ -127,3 +127,10 @@
   .lev-footer__top { grid-template-columns: 1fr; }
   .lev-logo img { height: 38px; }
 }
+
+/* hot sellers: a small animated flame (Google's Noto animated emoji, CC BY 4.0) with "Hot selling" under it */
+.pcard__tags { z-index: 2; align-items: flex-start; }
+.pcard__hot { display: grid; justify-items: center; gap: 1px; margin: -4px 2px 0 -2px; }
+.pcard__img .pcard__hot img, .pcard:hover .pcard__img .pcard__hot img { position: static; inset: auto; width: 34px; height: 34px; object-fit: contain; opacity: 1; transform: none; filter: drop-shadow(0 2px 3px rgba(14, 14, 16, 0.16)); }
+/* the words are a red-to-orange blend like the flame, with nothing behind them */
+.pcard__hot em { font-style: normal; font-family: var(--font-display); font-size: 12.5px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.1; white-space: nowrap; color: #f0421c; background: linear-gradient(180deg, #e8231c 10%, #ff8a1f 95%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }

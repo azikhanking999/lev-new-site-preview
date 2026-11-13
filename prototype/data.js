@@ -6,6 +6,9 @@ window.LEV_DATA = {
   pricing: "../config/pricing.json",
   gallery: "../media/gallery.json",
   mediaBase: "../",
+  clipart: "../theme/assets/lev-clipart.json",
+  logo: "../theme/assets/lev-logo.png",
+  fire: "../theme/assets/lev-fire.webp",
   product: function (sku) { return "../catalog/" + sku + "/product.json"; },
   url: {
     home: "index.html",

@@ -13,22 +13,23 @@
 </head>
 <body>
   <div id="studio"></div>
+  <script src="data.js"></script>
   <script src="../theme/assets/lev-pricing.js"></script>
   <script src="../theme/assets/lev-studio.js"></script>
   <script>
     (async function () {
       const q = new URLSearchParams(location.search);
-      const sku = q.get("sku") || "PC54";
+      const D = window.LEV_DATA, sku = q.get("sku") || (window.LEV_PAGE && window.LEV_PAGE.sku) || "PC54";
       const [product, pricing, clipart] = await Promise.all([
-        fetch("../catalog/" + sku + "/product.json").then(r => r.json()),
-        fetch("../config/pricing.json").then(r => r.json()),
-        fetch("../theme/assets/lev-clipart.json").then(r => r.json())
+        fetch(D.product(sku)).then(r => r.json()),
+        fetch(D.pricing).then(r => r.json()),
+        fetch(D.clipart).then(r => r.json())
       ]);
       window.studio = LevStudio.mount(document.getElementById("studio"), {
         product, pricing, clipart,
         colour: q.get("color"), method: q.get("method"), panel: q.get("panel"),
-        logo: "../theme/assets/lev-logo.png",
-        homeUrl: "index.html", productUrl: "product.html?sku=" + sku
+        logo: D.logo,
+        homeUrl: D.url.home, productUrl: D.url.product(sku)
       });
     })();
   </script>
