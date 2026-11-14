@@ -278,7 +278,12 @@
       el.defs = el.svg.appendChild(s("defs"));
       el.clipRect = s("rect", { x: 0, y: 0 });
       el.defs.appendChild(s("clipPath", { id: "ls-clip" }, [el.clipRect]));
-      el.garment = el.svg.appendChild(s("image", { class: "ls-garment", preserveAspectRatio: "xMidYMid slice" }));
+      /* the item sits on a white board with round corners, so the studio's pattern shows around it */
+      el.boardRect = s("rect", {});
+      el.defs.appendChild(s("clipPath", { id: "ls-board" }, [el.boardRect]));
+      el.boardBg = el.svg.appendChild(s("rect", { class: "ls-board" }));
+      el.board = el.svg.appendChild(s("g", { "clip-path": "url(#ls-board)" }));
+      el.garment = el.board.appendChild(s("image", { class: "ls-garment", preserveAspectRatio: "xMidYMid slice" }));
       el.area = el.svg.appendChild(s("g", { class: "ls-area" }));
       el.areaBox = el.area.appendChild(s("rect", { class: "ls-area-box", x: 0, y: 0, rx: 8 }));
       el.guideV = el.area.appendChild(s("line", { class: "ls-guide" }));
@@ -294,6 +299,7 @@
       var vb = g.vb;
       if (st.zoom) { var pad = 0.16; vb = { x: g.ax - g.aw * pad, y: g.ay - g.ah * pad, w: g.aw * (1 + 2 * pad), h: g.ah * (1 + 2 * pad) }; }
       el.svg.setAttribute("viewBox", vb.x + " " + vb.y + " " + vb.w + " " + vb.h);
+      [el.boardRect, el.boardBg].forEach(function (r) { r.setAttribute("x", vb.x); r.setAttribute("y", vb.y); r.setAttribute("width", vb.w); r.setAttribute("height", vb.h); r.setAttribute("rx", vb.w * 0.028); });
       var src = product.base + col.images[v.image];
       if (el.garment.getAttribute("href") !== src) { el.garment.setAttribute("href", src); el.svg.classList.remove("is-swapped"); void el.svg.getBoundingClientRect(); el.svg.classList.add("is-swapped"); }
       el.garment.setAttribute("width", IMG[0]); el.garment.setAttribute("height", IMG[1]);
@@ -603,7 +609,42 @@
       return [panelHead("Text", "Edit your text"), box];
     }
 
+    /* ---------- print-ready files (optional): AI, PDF, SVG or TIFF kept with the order, not drawn on the item ---------- */
+    var printFiles = [], PRINT_EXT = /\.(ai|pdf|svg|tiff?)$/i, PRINT_MAX = 50 * 1024 * 1024, PRINT_COUNT = 5;
+    function fileSize(n) { return n < 1024 * 1024 ? Math.max(1, Math.round(n / 1024)) + " KB" : (n / 1024 / 1024).toFixed(1) + " MB"; }
+    function addPrintFile(file) {
+      if (!PRINT_EXT.test(file.name)) { toast("Print files can be AI, PDF, SVG or TIFF."); return false; }
+      if (file.size > PRINT_MAX) { toast("That file is over 50 MB. Email it to us instead and we will match it to your order."); return false; }
+      if (printFiles.length >= PRINT_COUNT) { toast("You can add up to " + PRINT_COUNT + " files."); return false; }
+      if (printFiles.some(function (f) { return f.name === file.name && f.size === file.size; })) { toast("That file is already added."); return false; }
+      printFiles.push(file); toast("Added " + file.name + ". Our art team will use it for printing."); return true;
+    }
+    function printFilesBox(redraw) {
+      var wrap = h("div", { class: "ls-pf" });
+      var input = h("input", { type: "file", accept: ".ai,.pdf,.svg,.tif,.tiff,application/pdf,application/postscript,image/svg+xml,image/tiff", multiple: true, hidden: true, onchange: function (e) { Array.prototype.forEach.call(e.target.files, addPrintFile); e.target.value = ""; redraw(); } });
+      wrap.appendChild(h("div", { class: "ls-pf__head" }, [h("strong", { text: "Original design file" }), h("span", { class: "tag", text: "Optional" })]));
+      wrap.appendChild(h("p", { class: "t-small t-muted", text: "For the best print, share your original file if you have one: AI, PDF, SVG or TIFF. No file? No problem, we can work from what you add in the studio." }));
+      if (printFiles.length) {
+        var list = h("ul", { class: "ls-pf__list" });
+        printFiles.forEach(function (f, i) {
+          list.appendChild(h("li", { class: "ls-pf__file" }, [
+            h("span", { class: "ls-pf__ext", text: (f.name.split(".").pop() || "").toUpperCase().slice(0, 4) }),
+            h("span", { class: "ls-pf__name" }, [h("strong", { text: f.name }), h("span", { class: "t-micro t-muted t-num", text: fileSize(f.size) })]),
+            h("button", { class: "ls-iconbtn", type: "button", title: "Remove this file", "aria-label": "Remove " + f.name, html: icon("close", 16), onclick: function () { printFiles.splice(i, 1); redraw(); } })
+          ]));
+        });
+        wrap.appendChild(list);
+      }
+      var btn = h("button", { class: "btn btn--ghost btn--sm btn--block", type: "button", html: icon("upload", 16) + (printFiles.length ? "Add another file" : "Add AI, PDF, SVG or TIFF"), onclick: function () { input.click(); } });
+      wrap.addEventListener("dragover", function (e) { e.preventDefault(); wrap.classList.add("is-over"); });
+      wrap.addEventListener("dragleave", function () { wrap.classList.remove("is-over"); });
+      wrap.addEventListener("drop", function (e) { e.preventDefault(); e.stopPropagation(); wrap.classList.remove("is-over"); Array.prototype.forEach.call(e.dataTransfer.files, addPrintFile); redraw(); });
+      wrap.appendChild(btn); wrap.appendChild(input);
+      return wrap;
+    }
+
     function readFile(file) {
+      if (/\.(ai|pdf|tiff?)$/i.test(file.name)) { if (addPrintFile(file)) renderPanel(); return; }
       if (!/^image\/(png|jpeg|svg\+xml|webp|gif)$/.test(file.type)) { toast("That file type can't be shown here. Use PNG, JPG or SVG, or email us the file."); return; }
       if (file.size > 12 * 1024 * 1024) { toast("That picture is over 12 MB. Try a smaller copy."); return; }
       var fr = new FileReader();
@@ -646,7 +687,7 @@
         box.appendChild(slider("Rotate", "rot", -180, 180, 1, function (v) { return Math.round(v) + "°"; }));
         if (!it.cut && !/svg/.test(it.src.slice(0, 30))) box.appendChild(h("button", { class: "btn btn--ghost btn--sm btn--block", text: "Remove white background", onclick: function () { knockOutWhite(it); } }));
       }
-      box.appendChild(h("p", { class: "t-micro t-muted", text: "Have an AI, PDF or PSD file? Upload a picture of it for placement, add a note, and send us the original after you order. We check every design before printing." }));
+      box.appendChild(printFilesBox(renderPanel));
       return [panelHead("Upload", it ? "Your picture" : "Add your art"), box];
     }
 
@@ -849,6 +890,7 @@
       shown.forEach(function (key) { var l = locationInfo(key); mocks.appendChild(h("figure", { class: "ls-mock card" }, [staticView(key, st.colour, "r"), h("figcaption", {}, [h("strong", { text: viewCfg(key).label }), l ? h("span", { class: "t-small t-muted t-num", text: l.wIn.toFixed(1) + " × " + l.hIn.toFixed(1) + " in · " + l.tierLabel }) : null])])); });
       left.appendChild(mocks);
       left.appendChild(h("label", { class: "field" }, [h("span", { text: "Notes for our art team (optional)" }), h("textarea", { class: "textarea", placeholder: "Example: match the blue to our logo, keep the text 3 inches below the collar.", value: st.notes, oninput: function (e) { st.notes = e.target.value; persist(); } })]));
+      left.appendChild(h("div", { class: "card ls-pf-card" }, [printFilesBox(renderStepBody)]));
       var rows = h("div", { class: "ls-lines" });
       function line(a, b, cls) { rows.appendChild(h("div", { class: "ls-line " + (cls || "") }, [h("span", { text: a }), h("span", { class: "t-num", text: b })])); }
       line(product.title + " × " + q.qty, P.money(q.blank) + " each");
@@ -893,7 +935,7 @@
     }
     function cartPayload() {
       var q = quote();
-      return { sku: product.sku, handle: product.handle, method: st.method, designName: st.designName, email: st.email, notes: st.notes, colours: st.colours.map(function (c) { return { code: c, name: colourCfg(c).name, sizes: st.sizes[c] || {} }; }), locations: locations(), names: st.names.on ? st.names.rows : [], quote: q };
+      return { sku: product.sku, handle: product.handle, method: st.method, designName: st.designName, email: st.email, notes: st.notes, colours: st.colours.map(function (c) { return { code: c, name: colourCfg(c).name, sizes: st.sizes[c] || {} }; }), locations: locations(), names: st.names.on ? st.names.rows : [], printFiles: printFiles.map(function (f) { return { name: f.name, size: f.size, type: f.type }; }), quote: q };
     }
     function addToCart() {
       var payload = cartPayload();
@@ -959,7 +1001,7 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { for (var k in nodes) nodes[k]._sig = null; if (st.step === "design") renderStage(); renderViews(); });
     if (resumed) toast("Welcome back. We kept your design.");
 
-    return { state: st, quote: quote, payload: cartPayload, addText: addText, addItem: addItem, go: go, locations: locations, render: function () { clearNodes(); renderAll(); }, commit: commit, undo: undo, redo: redo };
+    return { state: st, quote: quote, payload: cartPayload, printFiles: function () { return printFiles.slice(); }, addText: addText, addItem: addItem, go: go, locations: locations, render: function () { clearNodes(); renderAll(); }, commit: commit, undo: undo, redo: redo };
   }
 
   window.LevStudio = { mount: mount, FONTS: FONTS };

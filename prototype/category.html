@@ -22,6 +22,7 @@
   <script src="../theme/assets/lev-mock.js"></script>
   <link rel="stylesheet" href="../theme/assets/lev-motion.css">
   <script src="../theme/assets/lev-motion.js"></script>
+  <script src="../theme/assets/lev-logo.js"></script>
 </head>
 <body>
   <main>
@@ -113,8 +114,10 @@
 
     <!-- Questions -->
     <section class="wrap section" style="padding-top:0">
-      <div class="section__head reveal"><span class="t-eyebrow">Questions</span><h2 class="t-h1" id="faq-title"></h2></div>
-      <div class="faq" id="cat-faq" style="max-width:820px"></div>
+      <div class="faqx">
+      <div class="faqx__head stack reveal" style="--gap:14px"><span class="t-eyebrow">Questions</span><h2 class="t-h1" id="faq-title"></h2><p class="t-lead">Short answers to what people ask before they order.</p><a class="faqx__call" href="tel:+13057055486">Something else? Call (305) 705-5486</a></div>
+      <div class="faq" id="cat-faq"></div>
+      </div>
     </section>
 
     <!-- Other categories -->
@@ -290,7 +293,7 @@
 
         // questions
         $("faq-title").textContent = "About our " + cat.toLowerCase() + ".";
-        $("cat-faq").innerHTML = C.faq.map(function (f) { return "<details><summary>" + f[0] + "</summary><p>" + f[1] + "</p></details>"; }).join("");
+        $("cat-faq").innerHTML = C.faq.map(function (f, i) { return '<details name="faq"' + (i ? "" : " open") + "><summary>" + f[0] + "</summary><p>" + f[1] + "</p></details>"; }).join("");
 
         // other categories
         $("cat-others").innerHTML = Object.keys(CATS).filter(function (c) { return c !== cat; }).map(function (c, n) {

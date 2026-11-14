@@ -134,3 +134,194 @@
 .pcard__img .pcard__hot img, .pcard:hover .pcard__img .pcard__hot img { position: static; inset: auto; width: 34px; height: 34px; object-fit: contain; opacity: 1; transform: none; filter: drop-shadow(0 2px 3px rgba(14, 14, 16, 0.16)); }
 /* the words are a red-to-orange blend like the flame, with nothing behind them */
 .pcard__hot em { font-style: normal; font-family: var(--font-display); font-size: 12.5px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.1; white-space: nowrap; color: #f0421c; background: linear-gradient(180deg, #e8231c 10%, #ff8a1f 95%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* ---- Mega menu, clean version (2026-11-15). Colour is used sparingly: a thin bar, small dots, one button.
+   Each category keeps its own colour, the same ones as the home banner. ---- */
+[data-pane="shirts"], [data-mega="shirts"] { --mc: #ff5a1f; --mc-fg: #0e0e10; }
+[data-pane="hoodies"], [data-mega="hoodies"] { --mc: #7a3df5; --mc-fg: #fff; }
+[data-pane="hats"], [data-mega="hats"] { --mc: #ff2d92; --mc-fg: #0e0e10; }
+[data-pane="bags"], [data-mega="bags"] { --mc: #0fb5a6; --mc-fg: #0e0e10; }
+.lev-nav > li > button[data-mega] { position: relative; }
+.lev-nav > li > button[data-mega]::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 3px; height: 2px; border-radius: 2px; background: var(--mc); transform: scaleX(0); transform-origin: 0 50%; transition: transform var(--d-fast) var(--ease-out); }
+.lev-nav > li > button[data-mega]:hover::after, .lev-nav > li > button[data-mega][aria-expanded="true"]::after { transform: scaleX(1); }
+
+.lev-mega__box { box-shadow: 0 6px 0 var(--ink), 0 24px 48px rgba(14, 14, 16, 0.10); }
+.lev-mega__pane { position: relative; grid-template-columns: 1.15fr 1fr; }
+.lev-mega__links { padding: 28px 26px 20px; gap: 2px 22px; }
+.lev-mega__links h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.lev-mega__count { font-family: var(--font-body, inherit); font-style: normal; font-size: 12px; font-weight: 600; letter-spacing: 0; padding: 3px 9px; border-radius: var(--r-pill); background: var(--paper-2); color: var(--ink-2); }
+.lev-mega__links a { grid-template-columns: auto 1fr; column-gap: 12px; align-items: center; }
+.lev-mega__links a::before { content: ""; grid-row: 1 / span 2; width: 6px; height: 6px; border-radius: 50%; background: var(--line-strong); transition: background var(--d-quick), transform var(--d-fast) var(--ease-bounce); }
+.lev-mega__links a strong, .lev-mega__links a span { grid-column: 2; }
+.lev-mega__links a:hover::before, .lev-mega__links a:nth-of-type(1)::before { background: var(--mc); }
+.lev-mega__links a:hover::before { transform: scale(1.5); }
+
+.lev-mega__feature { padding: 16px; }
+.lev-studiocard { align-content: start; gap: 8px; padding: 12px 12px 14px; }
+.lev-studiocard > strong { margin-top: 2px; padding: 0; background: none; font-size: 19px; }
+.lev-studiocard > .lev-studiocard__go { display: inline-flex; align-items: center; gap: 8px; margin-top: 2px; padding: 8px 14px; border-radius: var(--r-pill); background: var(--mc); color: var(--mc-fg); font-size: 13px; font-weight: 700; }
+.lev-studiocard .arrow { width: 16px; height: 16px; transition: transform var(--d-fast) var(--ease-out); }
+.lev-studiocard:hover .arrow { transform: translateX(4px); }
+
+.lev-mini { display: block; width: 100%; height: auto; }
+.lev-mini__board { fill: var(--paper); stroke: var(--line); }
+.lev-mini__rail { stroke: var(--line); fill: none; }
+.lev-mini__tool rect { fill: #fff; stroke: var(--line); }
+.lev-mini__tool path { fill: none; stroke: var(--ink-2); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+.lev-mini__g { fill: #fff; stroke: #cfc9bd; stroke-width: 1.4; stroke-linejoin: round; }
+.lev-mini__ln { fill: none; stroke: #cfc9bd; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.lev-mini__star { fill: var(--mc); }
+.lev-mini__txt { font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.02em; fill: var(--ink); }
+.lev-mini__sel { opacity: 0; }
+.lev-mini__sel rect { fill: none; stroke: var(--violet); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.lev-mini__sel circle { fill: #fff; stroke: var(--violet); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.lev-mini__sw circle { stroke: rgba(14, 14, 16, 0.18); }
+.lev-mini__cur { fill: var(--ink); stroke: #fff; stroke-width: 1.3; stroke-linejoin: round; opacity: 0; }
+.lev-mini__d, .lev-mini__pick, .lev-mini__txt, .lev-mini__star { transform-box: fill-box; transform-origin: center; }
+
+.lev-steps { position: relative; height: 18px; }
+.lev-steps em { position: absolute; inset: 0; font-style: normal; font-size: 13px; font-weight: 600; color: var(--ink-2); white-space: nowrap; opacity: 0; }
+.lev-steps em:first-child { opacity: 1; }
+.lev-stepdots { display: flex; gap: 4px; }
+.lev-stepdots i { width: 14px; height: 3px; border-radius: 3px; background: var(--line-strong); }
+.lev-stepdots i:first-child { background: var(--mc); }
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .lev-mega__pane.is-on .lev-mega__links a { animation: lev-mega-in 320ms var(--ease-out) both; }
+  .lev-mega__pane.is-on .lev-mega__links a:nth-of-type(2) { animation-delay: 25ms; } .lev-mega__pane.is-on .lev-mega__links a:nth-of-type(3) { animation-delay: 50ms; }
+  .lev-mega__pane.is-on .lev-mega__links a:nth-of-type(4) { animation-delay: 75ms; } .lev-mega__pane.is-on .lev-mega__links a:nth-of-type(5) { animation-delay: 100ms; }
+  .lev-mega__pane.is-on .lev-mega__links a:nth-of-type(n+6) { animation-delay: 125ms; }
+  .lev-mega__pane.is-on .lev-feature { animation: lev-mega-card 420ms var(--ease-out) 60ms both; }
+  .lev-mega__pane.is-on .lev-studiocard { animation-delay: 120ms; }
+  @keyframes lev-mega-in { from { opacity: 0; transform: translateY(6px); } }
+  @keyframes lev-mega-card { from { opacity: 0; transform: translateY(10px); } }
+
+  /* The studio walk-through: 8 seconds, four steps of 2 seconds each.
+     A piece that is "on" for one step uses lev-step with a delay of (step x 2s) - 8s. */
+  .lev-mini__tool rect { animation: lev-step-tile 8s linear infinite; animation-delay: calc(var(--i) * 2s - 8s); }
+  .lev-mini__tool path { animation: lev-step-glyph 8s linear infinite; animation-delay: calc(var(--i) * 2s - 8s); }
+  .lev-steps em, .lev-steps em:first-child { opacity: 0; animation: lev-step-text 8s var(--ease-out) infinite; animation-delay: calc(var(--i) * 2s - 8s); }
+  .lev-stepdots i, .lev-stepdots i:first-child { background: var(--line-strong); animation: lev-step-dot 8s linear infinite; animation-delay: calc(var(--i) * 2s - 8s); }
+  @keyframes lev-step-tile { 0%, 23% { fill: var(--mc); stroke: var(--mc); } 26%, 100% { fill: #fff; stroke: var(--line); } }
+  @keyframes lev-step-glyph { 0%, 23% { stroke: var(--mc-fg); } 26%, 100% { stroke: var(--ink-2); } }
+  @keyframes lev-step-text { 0% { opacity: 0; translate: 0 5px; } 3%, 22% { opacity: 1; translate: 0 0; } 25%, 100% { opacity: 0; translate: 0 -4px; } }
+  @keyframes lev-step-dot { 0%, 24% { background: var(--mc); width: 22px; } 26%, 100% { background: var(--line-strong); width: 14px; } }
+
+  .lev-mini__txt { animation: lev-mini-txt 8s var(--ease-out) infinite; }
+  .lev-mini__star { animation: lev-mini-star 8s var(--ease-out) infinite; }
+  .lev-mini__d { animation: lev-mini-size 8s cubic-bezier(0.45, 0, 0.2, 1) infinite; }
+  .lev-mini__sel { animation: lev-mini-sel 8s linear infinite; }
+  .lev-mini__g { animation: lev-mini-fill 8s linear infinite; }
+  .lev-mini__pick { animation: lev-mini-pick 8s linear infinite; }
+  .lev-mini__cur { opacity: 1; animation: lev-mini-cur 8s cubic-bezier(0.45, 0, 0.2, 1) infinite; }
+  @keyframes lev-mini-txt { 0%, 3% { opacity: 0; scale: 0.6; } 8%, 95% { opacity: 1; scale: 1; } 99%, 100% { opacity: 0; scale: 1; } }
+  @keyframes lev-mini-star { 0%, 27% { opacity: 0; translate: 0 -10px; } 34%, 95% { opacity: 1; translate: 0 0; } 99%, 100% { opacity: 0; translate: 0 0; } }
+  @keyframes lev-mini-size { 0%, 56% { scale: 0.8; } 68%, 100% { scale: 1.15; } }
+  @keyframes lev-mini-sel { 0%, 49% { opacity: 0; } 52%, 71% { opacity: 1; } 74%, 100% { opacity: 0; } }
+  @keyframes lev-mini-fill { 0%, 78% { fill: #fff; } 81%, 96% { fill: #ffc83d; } 100% { fill: #fff; } }
+  @keyframes lev-mini-pick { 0%, 76% { scale: 1; } 78.5% { scale: 1.35; } 82%, 100% { scale: 1; } }
+  @keyframes lev-mini-cur {
+    0%, 20% { translate: 17px 21px; } 25%, 45% { translate: 17px 41px; }
+    52%, 56% { translate: var(--ax) var(--ay); } 68%, 71% { translate: var(--bx) var(--by); }
+    77%, 94% { translate: 185px 60px; } 100% { translate: 17px 21px; }
+  }
+}
+
+/* ---- Section button colours (2026-11-15, Nasir): each section of a page gets its own solid button colour.
+   The words are black or white, whichever reads better on that colour. The banner and the header keep their own. ---- */
+.btn--accent { --bg: var(--btn-bg, var(--accent)); --fg: var(--btn-fg, var(--ink)); }
+.btn--accent:hover { --bg: var(--btn-hover, var(--accent-hover)); }
+main > section:not(.hero):nth-of-type(6n+1) { --btn-bg: #ff5a1f; --btn-hover: #ff7038; --btn-fg: #0e0e10; }
+main > section:not(.hero):nth-of-type(6n+2) { --btn-bg: #7a3df5; --btn-hover: #8f5bff; --btn-fg: #fff; }
+main > section:not(.hero):nth-of-type(6n+3) { --btn-bg: #ff2d92; --btn-hover: #ff55a8; --btn-fg: #0e0e10; }
+main > section:not(.hero):nth-of-type(6n+4) { --btn-bg: #0fb5a6; --btn-hover: #2ccabb; --btn-fg: #0e0e10; }
+main > section:not(.hero):nth-of-type(6n+5) { --btn-bg: #ffc83d; --btn-hover: #ffd566; --btn-fg: #0e0e10; }
+main > section:not(.hero):nth-of-type(6n) { --btn-bg: #0e0e10; --btn-hover: #2a2a2e; --btn-fg: #fff; }
+/* dark blocks: a black button would vanish, so they keep orange */
+main > section .bulk, main > section .calc__out, main > section [class*="--ink"] { --btn-bg: #ff5a1f; --btn-hover: #ff7038; --btn-fg: #0e0e10; }
+/* only the Text and Upload tools light up (steps 1 and 2); steps 3 and 4 happen on the item itself */
+.lev-mini__tool:nth-of-type(n+3) rect, .lev-mini__tool:nth-of-type(n+3) path { animation: none; }
+
+/* ---- Footer, enhanced (2026-11-15): brand block with the logo and proof points, link columns with icons,
+   a thin rule in the logo's colours, a large faint wordmark, and a back-to-top link. Clean and dark. ---- */
+.lev-footer { position: relative; overflow: hidden; }
+.lev-footer__top { grid-template-columns: 1.5fr 0.8fr 0.8fr 1.2fr; gap: 48px; padding-block: clamp(48px, 6vw, 76px) 28px; position: relative; z-index: 1; }
+.lev-footer__brand { display: grid; gap: 18px; align-content: start; justify-items: start; }
+.lev-footer .lev-logo img { filter: invert(1) hue-rotate(180deg); mix-blend-mode: screen; }
+.lev-footer .lv { height: 52px; }
+.lev-footer .lv path { fill: #fff; }
+.lev-footer__lead { max-width: 34ch; color: rgba(255, 255, 255, 0.7); }
+.lev-footer__proof { display: flex; flex-wrap: wrap; gap: 8px; }
+.lev-footer .lev-footer__proof li { display: inline-flex; align-items: center; gap: 6px; margin: 0; padding: 6px 12px; border-radius: var(--r-pill); border: 1px solid rgba(255, 255, 255, 0.16); font-size: 13px; color: rgba(255, 255, 255, 0.86); }
+.lev-footer__proof i { display: grid; color: var(--sun); }
+.lev-footer h4 { color: rgba(255, 255, 255, 0.5); }
+.lev-footer__col a { position: relative; display: inline-block; padding-left: 0; transition: color var(--d-quick), padding-left var(--d-fast) var(--ease-out); }
+.lev-footer__col a::before { content: ""; position: absolute; left: 0; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%; background: var(--dot, var(--accent)); opacity: 0; scale: 0; transition: opacity var(--d-quick), scale var(--d-fast) var(--ease-bounce); }
+.lev-footer__col a:hover { color: #fff; padding-left: 14px; }
+.lev-footer__col a:hover::before { opacity: 1; scale: 1; }
+.lev-footer [data-dot="shirts"] { --dot: #ff5a1f; } .lev-footer [data-dot="hoodies"] { --dot: #a06bff; }
+.lev-footer [data-dot="hats"] { --dot: #ff2d92; } .lev-footer [data-dot="bags"] { --dot: #0fb5a6; }
+.lev-footer__contact a { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: center; padding-left: 0; line-height: 1.35; }
+.lev-footer__contact a::before { display: none; }
+.lev-footer__contact a:hover { padding-left: 0; }
+.lev-footer__contact i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.16); color: #fff; transition: background var(--d-quick), color var(--d-quick), border-color var(--d-quick), transform var(--d-fast) var(--ease-bounce); }
+.lev-footer__contact a:hover i { background: #fff; color: var(--ink); border-color: #fff; transform: scale(1.06); }
+.lev-footer__contact span { overflow-wrap: anywhere; }
+.lev-footer__base { position: relative; z-index: 1; align-items: center; }
+.lev-footer__base span:nth-child(2) { margin-right: auto; margin-left: 18px; }
+.lev-footer__up { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--r-pill); border: 1px solid rgba(255, 255, 255, 0.18); font-weight: 600; color: #fff; transition: background var(--d-quick), color var(--d-quick), border-color var(--d-quick); }
+.lev-footer a.lev-footer__up:hover { background: #fff; color: var(--ink); border-color: #fff; }
+.lev-footer__up svg { transition: transform var(--d-fast) var(--ease-out); }
+.lev-footer__up:hover svg { transform: translateY(-3px); }
+@media (prefers-reduced-motion: no-preference) {
+}
+@media (max-width: 1020px) { .lev-footer__top { grid-template-columns: 1fr 1fr; gap: 36px; } .lev-footer__brand { grid-column: 1 / -1; } }
+@media (max-width: 620px) { .lev-footer__top { grid-template-columns: 1fr 1fr; } .lev-footer__top > :last-child { grid-column: 1 / -1; } }
+
+/* ---- Footer, creative layer (2026-11-15): a seam that sews itself, proof points as woven labels,
+   a giant living logo (wordmark that lights up under the pointer + the real heart), a Miami clock. ---- */
+@property --fx { syntax: "<length-percentage>"; inherits: true; initial-value: -20%; }
+.lev-footer__top { padding-top: clamp(64px, 7vw, 92px); }
+
+/* the giant living logo */
+.lev-footer__mark { display: flex; align-items: center; justify-content: center; gap: 0.1em; padding: 18px var(--gutter) 6px; font-size: clamp(38px, 10.4vw, 164px); line-height: 1; user-select: none; -webkit-user-select: none; }
+.lev-footer__word { position: relative; font-family: var(--font-display); font-weight: 800; letter-spacing: -0.04em; white-space: nowrap; }
+.lev-footer__word span { display: block; color: rgba(255, 255, 255, 0.075); }
+.lev-footer__word .lev-footer__glow { position: absolute; inset: 0; color: transparent; background: linear-gradient(90deg, #f2a51f, #ff5a1f 28%, #ff2d92 52%, #a06bff 76%, #35b3d3); -webkit-background-clip: text; background-clip: text;
+  -webkit-mask-image: radial-gradient(circle clamp(110px, 17vw, 280px) at var(--fx) var(--fy, 50%), #000 0, rgba(0, 0, 0, 0.55) 42%, transparent 72%); mask-image: radial-gradient(circle clamp(110px, 17vw, 280px) at var(--fx) var(--fy, 50%), #000 0, rgba(0, 0, 0, 0.55) 42%, transparent 72%); }
+.lev-footer__heart { position: relative; flex: none; width: 0.8em; height: 0.84em; margin-top: -0.08em; cursor: pointer; transform: translate(var(--hx, 0px), var(--hy, 0px)) rotate(var(--hr, 0deg)); transition: transform 500ms var(--ease-out); }
+.lev-footer__heartimg { position: absolute; inset: 0; background: url("lev-mark.webp") center / contain no-repeat; filter: drop-shadow(0 12px 28px rgba(160, 107, 255, 0.28)); }
+.lev-footer__heart b { position: absolute; border-radius: 50%; background: var(--c); }
+.lev-footer__heart u { position: absolute; left: 50%; top: 45%; border-radius: 50%; pointer-events: none; animation: lev-paint 900ms cubic-bezier(0.2, 0.7, 0.3, 1) both; }
+@keyframes lev-paint { from { translate: 0 0; scale: 0.4; opacity: 1; } 70% { opacity: 1; } to { translate: var(--tx) calc(var(--ty) + 70px); scale: 1; opacity: 0; } }
+
+.lev-footer__clock { display: inline-flex; align-items: center; gap: 8px; margin-right: 18px; }
+.lev-footer__clock[hidden] { display: none; }
+.lev-footer__clock i { width: 7px; height: 7px; border-radius: 50%; background: #2fd16b; }
+.lev-footer__clock em { font-style: normal; font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .lev-footer__glow { animation: lev-sweep 9s ease-in-out infinite alternate; }
+  .lev-footer__word.is-live .lev-footer__glow { animation: none; }
+  @keyframes lev-sweep { from { --fx: -12%; } to { --fx: 112%; } }
+  .lev-footer__heartimg { animation: lev-heart-rest 4.6s ease-in-out infinite; }
+  .lev-footer__heart.is-beat .lev-footer__heartimg { animation: lev-heart-beat 800ms ease-in-out 1; }
+  .lev-footer__heart b { animation: lev-dot-float 5s ease-in-out infinite; animation-delay: calc(var(--i) * -0.9s); }
+  .lev-footer__clock i { animation: lev-blink 2.4s ease-in-out infinite; }
+  @keyframes lev-heart-rest { 0%, 100% { scale: 1; } 50% { scale: 1.035; } }
+  @keyframes lev-heart-beat { 0%, 100% { scale: 1; } 16% { scale: 1.16; } 32% { scale: 0.98; } 48% { scale: 1.1; } 70% { scale: 1; } }
+  @keyframes lev-dot-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -0.05em; } }
+  @keyframes lev-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+}
+@media (max-width: 620px) { .lev-footer__clock { margin-right: 0; } }
+
+/* the bold line across the top of the footer: faint like the big wordmark, and it lights up the same way
+   (logo colours under the pointer, a slow glow sweeping across when there is no pointer) */
+.lev-line { position: absolute; left: 0; right: 0; top: 0; height: 8px; background: rgba(255, 255, 255, 0.075); pointer-events: none; }
+.lev-line i { position: absolute; inset: 0; background: linear-gradient(90deg, #f2a51f, #ff5a1f 28%, #ff2d92 52%, #a06bff 76%, #35b3d3);
+  -webkit-mask-image: radial-gradient(circle clamp(110px, 17vw, 280px) at var(--fx) 50%, #000 0, rgba(0, 0, 0, 0.55) 42%, transparent 72%); mask-image: radial-gradient(circle clamp(110px, 17vw, 280px) at var(--fx) 50%, #000 0, rgba(0, 0, 0, 0.55) 42%, transparent 72%); }
+@media (prefers-reduced-motion: no-preference) {
+  .lev-line i { animation: lev-sweep 9s ease-in-out infinite alternate; }
+  .lev-line.is-live i { animation: none; }
+}

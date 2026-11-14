@@ -190,3 +190,87 @@
   .ls-step__grid { grid-template-columns: 1fr; }
   .ls-sum { position: static; }
 }
+
+/* ---- Studio polish (2026-11-14): Nasir's pattern behind the studio, the item on a white board, calm motion ---- */
+.ls-stage { background: #fff url("lev-studio-bg.webp") center / cover no-repeat; }
+.ls-stepbody { background: linear-gradient(rgba(246, 243, 238, 0.62), rgba(246, 243, 238, 0.62)), var(--paper) url("lev-studio-bg.webp") center / cover no-repeat fixed; min-height: calc(100dvh - 64px); }
+.ls-canvas { padding: 26px 22px 20px; grid-template: minmax(0, 1fr) / minmax(0, 1fr); }
+.ls-svg { overflow: visible; min-width: 0; min-height: 0; }
+.ls-board { fill: #fff; filter: drop-shadow(0 10px 22px rgba(60, 40, 110, 0.13)) drop-shadow(0 1px 2px rgba(14, 14, 16, 0.10)); }
+
+/* floating pieces over the pattern read as soft glass cards */
+.ls-tools { border-radius: var(--r-pill); padding: 5px 8px; background: rgba(255, 255, 255, 0.86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 6px 18px rgba(60, 40, 110, 0.10); }
+.ls-tools .ls-iconbtn { border-radius: 50%; }
+.ls-views { padding: 18px 14px 8px 0; gap: 10px; }
+.ls-view { border-radius: var(--r-md); box-shadow: 0 4px 12px rgba(60, 40, 110, 0.08); }
+.ls-view.is-on { box-shadow: 0 3px 0 var(--ink), 0 8px 18px rgba(60, 40, 110, 0.12); }
+.ls-status { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.ls-stat { background: var(--card); }
+.ls-rail { gap: 6px; padding: 14px 10px; }
+.ls-rail button { border-radius: var(--r-md); }
+.ls-rail button.is-on { box-shadow: 0 3px 0 var(--accent); }
+.ls-prod { background: var(--card); box-shadow: 0 4px 14px rgba(14, 14, 16, 0.05); }
+.ls-top { box-shadow: 0 1px 0 var(--line), 0 6px 18px rgba(14, 14, 16, 0.04); border-bottom: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* arrival: the bar, the tool rail, the board and the side pictures come in one after another */
+  .ls-top { animation: ls-drop 420ms var(--ease-out) both; }
+  .ls-rail button { animation: ls-rise 420ms var(--ease-out) both; }
+  .ls-rail button:nth-child(1) { animation-delay: 80ms; } .ls-rail button:nth-child(2) { animation-delay: 130ms; }
+  .ls-rail button:nth-child(3) { animation-delay: 180ms; } .ls-rail button:nth-child(4) { animation-delay: 230ms; }
+  .ls-rail button:nth-child(5) { animation-delay: 280ms; } .ls-rail button:nth-child(6) { animation-delay: 330ms; }
+  .ls-canvas { animation: ls-board-in 620ms var(--ease-out) 120ms both; }
+  .ls-tools { animation: ls-drop 420ms var(--ease-out) 380ms both; }
+  .ls-status { animation: ls-rise 420ms var(--ease-out) 300ms both; }
+  @keyframes ls-drop { from { opacity: 0; transform: translateY(-10px); } }
+  @keyframes ls-rise { from { opacity: 0; transform: translateY(10px); } }
+  @keyframes ls-board-in { from { opacity: 0; transform: translateY(14px) scale(0.975); } }
+
+  /* the pattern drifts very slowly, so the background feels alive without pulling the eye */
+  .ls-stage { background-size: 112% auto; animation: ls-drift 60s ease-in-out infinite alternate; }
+  @keyframes ls-drift { from { background-position: 42% 44%; } to { background-position: 58% 56%; } }
+
+  /* switching side or colour: the item settles in */
+  /* no transform here: the left sleeve is the right one mirrored by a transform on the picture itself, and a second one hides it */
+  .ls-svg.is-swapped .ls-garment { animation: ls-swap 420ms var(--ease-out) both; }
+  @keyframes ls-swap { from { opacity: 0; filter: blur(3px); } }
+
+  /* panel content arrives piece by piece */
+  .ls-panel.is-in .ls-panel__body > * { animation: ls-panel-in 380ms var(--ease-out) both; }
+  .ls-panel.is-in .ls-panel__body > :nth-child(2) { animation-delay: 40ms; } .ls-panel.is-in .ls-panel__body > :nth-child(3) { animation-delay: 80ms; }
+  .ls-panel.is-in .ls-panel__body > :nth-child(4) { animation-delay: 120ms; } .ls-panel.is-in .ls-panel__body > :nth-child(5) { animation-delay: 160ms; }
+  .ls-panel.is-in .ls-panel__body > :nth-child(n+6) { animation-delay: 200ms; }
+
+  /* new text or art lands with a small pop; the selection frame fades in */
+  .ls-it.is-new { animation: ls-pop 380ms var(--ease-bounce) both; transform-box: fill-box; transform-origin: center; }
+  @keyframes ls-pop { from { opacity: 0; scale: 0.86; } }
+  .ls-over > * { animation: lev-fade 160ms var(--ease-out) both; }
+  .ls-area-box { animation: ls-dash 24s linear infinite; }
+  @keyframes ls-dash { to { stroke-dashoffset: -220; } }
+
+  /* small touches */
+  .ls-view img, .ls-view .ls-static { transition: transform var(--d-medium) var(--ease-out); }
+  .ls-view:hover .ls-static { transform: scale(1.04); }
+  .ls-method { transition: border-color var(--d-quick), background var(--d-quick), transform var(--d-quick) var(--ease-out), box-shadow var(--d-quick); }
+  .ls-method:not(.is-off):hover { transform: translateY(-1px); }
+  .ls-stat { animation: ls-rise 300ms var(--ease-out) both; }
+  .ls-steps button.is-on i { box-shadow: 0 0 0 4px rgba(14, 14, 16, 0.08); }
+  .ls-top .btn--accent svg { transition: transform var(--d-quick) var(--ease-out); }
+  .ls-top .btn--accent:hover svg { transform: translateX(3px); }
+}
+@media (max-width: 900px) { .ls-canvas { padding: 12px; } .ls-views { padding: 6px 12px; } }
+
+/* ---- optional print-ready files (AI, PDF, SVG, TIFF) ---- */
+.ls-pf { display: grid; gap: 10px; padding: 14px; border: 1.5px dashed var(--line-strong); border-radius: var(--r-md); background: var(--paper); transition: border-color var(--d-quick), background var(--d-quick); }
+.ls-pf.is-over { border-color: var(--ink); background: var(--accent-soft); }
+.ls-pf__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.ls-pf p { margin: 0; }
+.ls-pf__list { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.ls-pf__file { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 6px 4px 6px 6px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--card); }
+.ls-pf__ext { display: grid; place-items: center; height: 40px; border-radius: var(--r-xs); background: var(--ink); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; }
+.ls-pf__name { display: grid; min-width: 0; }
+.ls-pf__name strong { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ls-pf-card { padding: 6px; }
+.ls-pf-card .ls-pf { border: 0; background: none; }
+.ls-pf-card .ls-pf.is-over { background: var(--accent-soft); }
+@media (prefers-reduced-motion: no-preference) { .ls-pf__file { animation: ls-rise 300ms var(--ease-out) both; } }

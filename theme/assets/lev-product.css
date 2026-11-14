@@ -81,12 +81,35 @@
 .spec div { padding: 14px 16px; border-radius: var(--r-md); background: var(--card); border: 1px solid var(--line); }
 .spec span { display: block; font-size: 12px; color: var(--muted); }
 .spec strong { font-size: 15px; }
-.faq details { border-bottom: 1px solid var(--line); }
-.faq summary { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; font-weight: 600; cursor: pointer; list-style: none; }
+/* Questions (2026-11-15): numbered cards, one open at a time, a round plus that turns into a cross.
+   On the home and category pages the heading sits in its own column and stays in view (.faqx). */
+.faq { counter-reset: faq; display: grid; gap: 10px; }
+.faq details { counter-increment: faq; border: 1.5px solid var(--line); border-radius: var(--r-md); background: var(--card); transition: border-color var(--d-fast), box-shadow var(--d-fast) var(--ease-out), translate var(--d-fast) var(--ease-out); }
+.faq details:not([open]):hover { border-color: var(--line-strong); translate: 0 -1px; }
+.faq details[open] { border-color: var(--ink); box-shadow: 0 4px 0 var(--ink); }
+.faq summary { display: grid; grid-template-columns: 26px 1fr 32px; align-items: center; gap: 14px; padding: 16px 16px 16px 20px; font-weight: 600; font-size: 17px; cursor: pointer; list-style: none; }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--muted); transition: transform var(--d-fast) var(--ease-out); }
-.faq details[open] summary::after { transform: rotate(45deg); }
-.faq details p { padding-bottom: 18px; color: var(--ink-2); max-width: 64ch; }
+.faq summary::before { content: counter(faq, decimal-leading-zero); font-family: var(--font-display); font-weight: 800; font-size: 14px; color: var(--faint); font-variant-numeric: tabular-nums; transition: color var(--d-fast); }
+.faq details[open] summary::before { color: var(--accent); }
+.faq summary::after { content: ""; width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(var(--ink), var(--ink)) center / 12px 2px no-repeat, linear-gradient(var(--ink), var(--ink)) center / 2px 12px no-repeat, var(--paper-2); transition: rotate var(--d-medium) var(--ease-bounce), background-color var(--d-fast); }
+.faq summary:hover::after { background-color: var(--line); }
+.faq details[open] summary::after { rotate: 135deg; background: linear-gradient(#fff, #fff) center / 12px 2px no-repeat, linear-gradient(#fff, #fff) center / 2px 12px no-repeat, var(--ink); }
+.faq details p { padding: 0 60px 20px 60px; color: var(--ink-2); max-width: 70ch; }
+.faqx { display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.4fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.faqx__head { position: sticky; top: calc(var(--header-h) + 24px); }
+.faqx__call { width: fit-content; margin-top: 6px; font-weight: 600; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.faqx__call:hover { color: var(--accent); }
+@media (max-width: 900px) { .faqx { grid-template-columns: 1fr; } .faqx__head { position: static; } .faq details p { padding: 0 20px 18px 20px; } .faq summary { font-size: 16px; } }
+@media (prefers-reduced-motion: no-preference) {
+  .faq details[open] p { animation: faq-in 380ms var(--ease-out) both; }
+  @keyframes faq-in { from { opacity: 0; translate: 0 -6px; } }
+  /* the card grows and shrinks smoothly where the browser can do it; elsewhere it simply opens */
+  @supports (interpolate-size: allow-keywords) {
+    .faq { interpolate-size: allow-keywords; }
+    .faq details::details-content { block-size: 0; overflow: hidden; transition: block-size 340ms var(--ease-out), content-visibility 340ms allow-discrete; }
+    .faq details[open]::details-content { block-size: auto; }
+  }
+}
 
 /* Sticky bar on phones */
 .pbar { display: none; }
